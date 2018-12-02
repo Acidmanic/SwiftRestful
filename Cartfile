@@ -2,4 +2,4 @@
 
 
 
-git "https://github.com/Acidmanic/SwiftNamingConventions.git"
+github "Acidmanic/SwiftNamingConventions"

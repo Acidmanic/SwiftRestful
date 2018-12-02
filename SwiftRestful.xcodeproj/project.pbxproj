@@ -11,6 +11,7 @@
 		F138AE7921B388E600C79E62 /* SwiftRestfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */; };
 		F138AE7B21B388E600C79E62 /* SwiftRestful.h in Headers */ = {isa = PBXBuildFile; fileRef = F138AE6D21B388E600C79E62 /* SwiftRestful.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F138AE8621B38BC800C79E62 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = F138AE8521B38BC800C79E62 /* Cartfile */; };
+		F138AE8921B38E3800C79E62 /* NamingConventions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE8821B38E3800C79E62 /* NamingConventions.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRestfulTests.swift; sourceTree = "<group>"; };
 		F138AE7A21B388E600C79E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F138AE8521B38BC800C79E62 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		F138AE8821B38E3800C79E62 /* NamingConventions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NamingConventions.framework; path = Carthage/Build/iOS/NamingConventions.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F138AE8921B38E3800C79E62 /* NamingConventions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 				F138AE6C21B388E600C79E62 /* SwiftRestful */,
 				F138AE7721B388E600C79E62 /* SwiftRestfulTests */,
 				F138AE6B21B388E600C79E62 /* Products */,
+				F138AE8721B38E3800C79E62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +101,14 @@
 			name = PackageManagement;
 			sourceTree = "<group>";
 		};
+		F138AE8721B38E3800C79E62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F138AE8821B38E3800C79E62 /* NamingConventions.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -119,6 +131,7 @@
 				F138AE6621B388E600C79E62 /* Frameworks */,
 				F138AE6721B388E600C79E62 /* Headers */,
 				F138AE6821B388E600C79E62 /* Resources */,
+				F138AE8A21B38E5B00C79E62 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -202,6 +215,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F138AE8A21B38E5B00C79E62 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/NamingConventions.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F138AE6521B388E600C79E62 /* Sources */ = {
@@ -352,6 +382,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftRestful/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +406,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SwiftRestful/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
