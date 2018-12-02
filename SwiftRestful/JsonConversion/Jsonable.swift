@@ -9,10 +9,10 @@
 import Foundation
 import NamingConventions
 
-typealias JsonMediumType = [String:Any]
-typealias JsonArrayMediumType = [Any]
+public typealias JsonMediumType = [String:Any]
+public typealias JsonArrayMediumType = [Any]
 
-protocol Jsonable{
+public protocol Jsonable{
     
     
     init()
@@ -20,9 +20,9 @@ protocol Jsonable{
     func getJsonData() -> JsonMediumType
 }
 
-extension Array{
+public extension Array{
     
-    func getJsonData() -> [Any]{
+    public func getJsonData() -> [Any]{
         var ret:[Any] = []
         for kid in self{
             if let jkid = kid as? Jsonable{
@@ -37,10 +37,10 @@ extension Array{
     }
     
 }
-protocol JsonableKey{}
+public protocol JsonableKey{}
 extension String:JsonableKey{}
-extension Dictionary where Key:JsonableKey,Value:Any{
-    func getValueByCase(key:Key,naming:NamingConvention)->Any!{
+public extension Dictionary where Key:JsonableKey,Value:Any{
+    public func getValueByCase(key:Key,naming:NamingConvention)->Any!{
         if let stringKey = key as? String{
             let innerKey = ConventionConverter().autoConvert(from: stringKey, to: naming)
             if let convertedBackKey = innerKey as? Key {
@@ -49,7 +49,7 @@ extension Dictionary where Key:JsonableKey,Value:Any{
         }
         return nil
     }
-    func getValueByAnyOfCases(key:Key,namingCases:[NamingConvention])->Any!{
+    public func getValueByAnyOfCases(key:Key,namingCases:[NamingConvention])->Any!{
         for naming in namingCases{
             if let ret = self.getValueByCase(key: key, naming: naming){
                 return ret
@@ -58,7 +58,7 @@ extension Dictionary where Key:JsonableKey,Value:Any{
         return nil
     }
 }
-extension Jsonable {
+public extension Jsonable {
     
     private func isAtomic(_ data:Any)->Bool{
         if data as? String != nil {return true}
@@ -98,7 +98,7 @@ extension Jsonable {
         }
     }
     
-    func getJsonData() -> JsonMediumType{
+    public func getJsonData() -> JsonMediumType{
         var ret=JsonMediumType()
         let mir = Mirror(reflecting:self)
         for kid in mir.children{
@@ -122,7 +122,7 @@ extension Jsonable {
     }
     
     
-    func loadArray<T:Jsonable>(jsonData:Any!)->[T]{
+    public func loadArray<T:Jsonable>(jsonData:Any!)->[T]{
         var ret:[T]=[]
         if let jitems = jsonData as? [JsonMediumType]{
             for jitem in jitems{
