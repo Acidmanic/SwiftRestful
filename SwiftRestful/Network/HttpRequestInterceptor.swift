@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol HttpRequestInterceptor{
+public protocol HttpRequestInterceptor{
     
     
     func onRequest(requestParams:HttpRequestParameters)->HttpRequestParameters

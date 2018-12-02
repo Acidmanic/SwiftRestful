@@ -20,6 +20,7 @@
 		F138AECB21B3A17800C79E62 /* HttpRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */; };
 		F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */; };
 		F138AECD21B3A17800C79E62 /* OAuthClinet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC821B3A17800C79E62 /* OAuthClinet.swift */; };
+		F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestInterceptor.swift; sourceTree = "<group>"; };
 		F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestParameters.swift; sourceTree = "<group>"; };
 		F138AEC821B3A17800C79E62 /* OAuthClinet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthClinet.swift; sourceTree = "<group>"; };
+		F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		F138AE7721B388E600C79E62 /* SwiftRestfulTests */ = {
 			isa = PBXGroup;
 			children = (
+				F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */,
 				F138AE9721B3946200C79E62 /* JsonConversionTests.swift */,
 				F138AE7A21B388E600C79E62 /* Info.plist */,
 			);
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */,
 				F138AE9921B39ACE00C79E62 /* JsonConversionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

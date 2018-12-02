@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum HttpRequestResults{
+public enum HttpRequestResults{
     case Succeed
     case EmptyData
     case Error
@@ -16,40 +16,40 @@ enum HttpRequestResults{
     case NoRequestMade
 }
 
-class HttpResult<T>{
-    var RequestResult:HttpRequestResults=HttpRequestResults.NoRequestMade
-    var Value:T!
-    var ArrayValue:[T]!
-    var resultIsArray:Bool=false
-    var ResponseError:Error!
-    var ResponseCode:Int=0
+public class HttpResult<T>{
+    public var RequestResult:HttpRequestResults=HttpRequestResults.NoRequestMade
+    public var Value:T!
+    public var ArrayValue:[T]!
+    public var resultIsArray:Bool=false
+    public var ResponseError:Error!
+    public var ResponseCode:Int=0
     
 }
 
-enum HttpMethod:String{
+public enum HttpMethod:String{
     case POST
     case GET
     case DELETE
     case PUT
 }
 
-class HttpHeaderCollection{
-    static let ContentType="Content-Type"
-    static let TextContentType="application/text"
-    static let JsonContentType="application/json"
-    static let XmlContentType="application/xml"
-    static let FormUrlContentType="application/x-www-form-urlencoded; charset=utf-8"
-    static let Accept="Accept"
-    static let Authorization="Authorization"
-    static let AuthorizationBearerPrefix="bearer "
+public class HttpHeaderCollection{
+    public static let ContentType="Content-Type"
+    public static let TextContentType="application/text"
+    public static let JsonContentType="application/json"
+    public static let XmlContentType="application/xml"
+    public static let FormUrlContentType="application/x-www-form-urlencoded; charset=utf-8"
+    public static let Accept="Accept"
+    public static let Authorization="Authorization"
+    public static let AuthorizationBearerPrefix="bearer "
 }
 
-class HttpClient{
+public class HttpClient{
     
     private var instanceInterceptors:[HttpRequestInterceptor]=[]
     private static var globalInterceptors:[HttpRequestInterceptor]=[]
     
-    func download(url:String,method:HttpMethod,callback:@escaping (_ result:HttpResult<Data>)->Void){
+    public func download(url:String,method:HttpMethod,callback:@escaping (_ result:HttpResult<Data>)->Void){
         var headers:[String:String] = [:]
         headers[HttpHeaderCollection.ContentType]=HttpHeaderCollection.TextContentType
         headers[HttpHeaderCollection.Accept]=HttpHeaderCollection.TextContentType
@@ -58,11 +58,11 @@ class HttpClient{
     }
     
     
-    func download(url:String,method:HttpMethod,headers:[String:String],callback:@escaping (_ result:HttpResult<Data>)->Void){
+    public func download(url:String,method:HttpMethod,headers:[String:String],callback:@escaping (_ result:HttpResult<Data>)->Void){
         download(url: url, method: method,headers:headers,contentData:nil,callback: callback)
     }
     
-    func download(url:String,urlPostString:String,accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
+    public func download(url:String,urlPostString:String,accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
         var headers:[String:String]=[:]
         headers[HttpHeaderCollection.ContentType]=HttpHeaderCollection.FormUrlContentType
         headers[HttpHeaderCollection.Accept]=(accept != nil) ? accept! : HttpHeaderCollection.XmlContentType
@@ -71,7 +71,7 @@ class HttpClient{
     }
     
     
-    func download(url:String,urlParams:[String:String],accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
+    public func download(url:String,urlParams:[String:String],accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
         var headers:[String:String]=[:]
         headers[HttpHeaderCollection.ContentType]=HttpHeaderCollection.FormUrlContentType
         headers[HttpHeaderCollection.Accept]=(accept != nil) ? accept! : HttpHeaderCollection.XmlContentType
@@ -79,7 +79,7 @@ class HttpClient{
         download(url: url, method: HttpMethod.POST,headers:headers,contentData:contentData,callback: callback)
     }
     
-    func download(url:String,method:HttpMethod,
+    public func download(url:String,method:HttpMethod,
                   contentData:Data!,contentType:String,
                   callback:@escaping (_ result:HttpResult<Data>)->Void){
         var headers:[String:String]=[:]
@@ -88,7 +88,7 @@ class HttpClient{
         download(url: url, method: method, headers: headers, contentData: contentData, callback: callback)
     }
     
-    func download(url:String,method:HttpMethod,headers:[String:String],
+    public func download(url:String,method:HttpMethod,headers:[String:String],
                   contentData:Data!,callback:@escaping (_ result:HttpResult<Data>)->Void){
         var params = HttpRequestParameters(url: url,
                                            method: method,
@@ -179,10 +179,10 @@ class HttpClient{
         return params
     }
     
-    func pushInstanceInterceptor(interceptor:HttpRequestInterceptor){
+    public func pushInstanceInterceptor(interceptor:HttpRequestInterceptor){
         self.instanceInterceptors.append(interceptor)
     }
-    func pushGlobalInterceptor(interceptor:HttpRequestInterceptor){
+    public func pushGlobalInterceptor(interceptor:HttpRequestInterceptor){
         HttpClient.globalInterceptors.append(interceptor)
     }
 }

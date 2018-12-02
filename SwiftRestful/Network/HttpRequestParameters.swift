@@ -7,13 +7,13 @@
 //
 
 import Foundation
-class HttpRequestParameters{
-    var url:String
-    var method:HttpMethod
-    var headers:[String:String]
-    var contentData:Data!
+public class HttpRequestParameters{
+    public var url:String
+    public var method:HttpMethod
+    public var headers:[String:String]
+    public var contentData:Data!
     
-    init(url:String,method:HttpMethod,headers:[String:String],
+    public init(url:String,method:HttpMethod,headers:[String:String],
          contentData:Data!) {
         self.url=url
         self.method=method
@@ -21,7 +21,7 @@ class HttpRequestParameters{
         self.contentData=contentData
     }
     
-    init(url:String){
+    public init(url:String){
         self.url=url
         self.method=HttpMethod.GET
         self.headers=[:]
