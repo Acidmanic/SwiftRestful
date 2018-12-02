@@ -10,6 +10,7 @@
 		F138AE7421B388E600C79E62 /* SwiftRestful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE6A21B388E600C79E62 /* SwiftRestful.framework */; };
 		F138AE7921B388E600C79E62 /* SwiftRestfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */; };
 		F138AE7B21B388E600C79E62 /* SwiftRestful.h in Headers */ = {isa = PBXBuildFile; fileRef = F138AE6D21B388E600C79E62 /* SwiftRestful.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F138AE8621B38BC800C79E62 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = F138AE8521B38BC800C79E62 /* Cartfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		F138AE7321B388E600C79E62 /* SwiftRestfulTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftRestfulTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRestfulTests.swift; sourceTree = "<group>"; };
 		F138AE7A21B388E600C79E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F138AE8521B38BC800C79E62 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		F138AE6021B388E600C79E62 = {
 			isa = PBXGroup;
 			children = (
+				F138AE8421B38B8000C79E62 /* PackageManagement */,
 				F138AE6C21B388E600C79E62 /* SwiftRestful */,
 				F138AE7721B388E600C79E62 /* SwiftRestfulTests */,
 				F138AE6B21B388E600C79E62 /* Products */,
@@ -84,6 +87,14 @@
 				F138AE7A21B388E600C79E62 /* Info.plist */,
 			);
 			path = SwiftRestfulTests;
+			sourceTree = "<group>";
+		};
+		F138AE8421B38B8000C79E62 /* PackageManagement */ = {
+			isa = PBXGroup;
+			children = (
+				F138AE8521B38BC800C79E62 /* Cartfile */,
+			);
+			name = PackageManagement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F138AE8621B38BC800C79E62 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
