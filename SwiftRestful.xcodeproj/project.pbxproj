@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F138AE7421B388E600C79E62 /* SwiftRestful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE6A21B388E600C79E62 /* SwiftRestful.framework */; };
-		F138AE7921B388E600C79E62 /* SwiftRestfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */; };
 		F138AE7B21B388E600C79E62 /* SwiftRestful.h in Headers */ = {isa = PBXBuildFile; fileRef = F138AE6D21B388E600C79E62 /* SwiftRestful.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F138AE8621B38BC800C79E62 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = F138AE8521B38BC800C79E62 /* Cartfile */; };
 		F138AE8921B38E3800C79E62 /* NamingConventions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE8821B38E3800C79E62 /* NamingConventions.framework */; };
 		F138AE8F21B3915D00C79E62 /* Timespan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE8D21B3915D00C79E62 /* Timespan.swift */; };
 		F138AE9021B3915D00C79E62 /* Jsonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE8E21B3915D00C79E62 /* Jsonable.swift */; };
+		F138AE9421B393B800C79E62 /* SwiftRestful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE6A21B388E600C79E62 /* SwiftRestful.framework */; };
+		F138AE9921B39ACE00C79E62 /* JsonConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE9721B3946200C79E62 /* JsonConversionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,12 +31,12 @@
 		F138AE6D21B388E600C79E62 /* SwiftRestful.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRestful.h; sourceTree = "<group>"; };
 		F138AE6E21B388E600C79E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F138AE7321B388E600C79E62 /* SwiftRestfulTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftRestfulTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRestfulTests.swift; sourceTree = "<group>"; };
 		F138AE7A21B388E600C79E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F138AE8521B38BC800C79E62 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		F138AE8821B38E3800C79E62 /* NamingConventions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NamingConventions.framework; path = Carthage/Build/iOS/NamingConventions.framework; sourceTree = "<group>"; };
 		F138AE8D21B3915D00C79E62 /* Timespan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timespan.swift; sourceTree = "<group>"; };
 		F138AE8E21B3915D00C79E62 /* Jsonable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jsonable.swift; sourceTree = "<group>"; };
+		F138AE9721B3946200C79E62 /* JsonConversionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConversionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F138AE7421B388E600C79E62 /* SwiftRestful.framework in Frameworks */,
+				F138AE9421B393B800C79E62 /* SwiftRestful.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,7 @@
 		F138AE7721B388E600C79E62 /* SwiftRestfulTests */ = {
 			isa = PBXGroup;
 			children = (
-				F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */,
+				F138AE9721B3946200C79E62 /* JsonConversionTests.swift */,
 				F138AE7A21B388E600C79E62 /* Info.plist */,
 			);
 			path = SwiftRestfulTests;
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F138AE7921B388E600C79E62 /* SwiftRestfulTests.swift in Sources */,
+				F138AE9921B39ACE00C79E62 /* JsonConversionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
