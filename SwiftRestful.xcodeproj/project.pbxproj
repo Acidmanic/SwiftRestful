@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F138AE7421B388E600C79E62 /* SwiftRestful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE6A21B388E600C79E62 /* SwiftRestful.framework */; };
+		F138AE7421B388E600C79E62 /* SwiftRestful_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE6A21B388E600C79E62 /* SwiftRestful_iOS.framework */; };
 		F138AE7921B388E600C79E62 /* SwiftRestfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */; };
 		F138AE7B21B388E600C79E62 /* SwiftRestful.h in Headers */ = {isa = PBXBuildFile; fileRef = F138AE6D21B388E600C79E62 /* SwiftRestful.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -23,10 +23,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F138AE6A21B388E600C79E62 /* SwiftRestful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRestful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F138AE6A21B388E600C79E62 /* SwiftRestful_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRestful_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F138AE6D21B388E600C79E62 /* SwiftRestful.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRestful.h; sourceTree = "<group>"; };
 		F138AE6E21B388E600C79E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F138AE7321B388E600C79E62 /* SwiftRestfulTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRestfulTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F138AE7321B388E600C79E62 /* SwiftRestfulTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftRestfulTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRestfulTests.swift; sourceTree = "<group>"; };
 		F138AE7A21B388E600C79E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F138AE7421B388E600C79E62 /* SwiftRestful.framework in Frameworks */,
+				F138AE7421B388E600C79E62 /* SwiftRestful_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,8 +62,8 @@
 		F138AE6B21B388E600C79E62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F138AE6A21B388E600C79E62 /* SwiftRestful.framework */,
-				F138AE7321B388E600C79E62 /* SwiftRestfulTests.xctest */,
+				F138AE6A21B388E600C79E62 /* SwiftRestful_iOS.framework */,
+				F138AE7321B388E600C79E62 /* SwiftRestfulTests iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,9 +100,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F138AE6921B388E600C79E62 /* SwiftRestful */ = {
+		F138AE6921B388E600C79E62 /* SwiftRestful iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F138AE7E21B388E600C79E62 /* Build configuration list for PBXNativeTarget "SwiftRestful" */;
+			buildConfigurationList = F138AE7E21B388E600C79E62 /* Build configuration list for PBXNativeTarget "SwiftRestful iOS" */;
 			buildPhases = (
 				F138AE6521B388E600C79E62 /* Sources */,
 				F138AE6621B388E600C79E62 /* Frameworks */,
@@ -113,14 +113,14 @@
 			);
 			dependencies = (
 			);
-			name = SwiftRestful;
+			name = "SwiftRestful iOS";
 			productName = SwiftRestful;
-			productReference = F138AE6A21B388E600C79E62 /* SwiftRestful.framework */;
+			productReference = F138AE6A21B388E600C79E62 /* SwiftRestful_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F138AE7221B388E600C79E62 /* SwiftRestfulTests */ = {
+		F138AE7221B388E600C79E62 /* SwiftRestfulTests iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F138AE8121B388E600C79E62 /* Build configuration list for PBXNativeTarget "SwiftRestfulTests" */;
+			buildConfigurationList = F138AE8121B388E600C79E62 /* Build configuration list for PBXNativeTarget "SwiftRestfulTests iOS" */;
 			buildPhases = (
 				F138AE6F21B388E600C79E62 /* Sources */,
 				F138AE7021B388E600C79E62 /* Frameworks */,
@@ -131,9 +131,9 @@
 			dependencies = (
 				F138AE7621B388E600C79E62 /* PBXTargetDependency */,
 			);
-			name = SwiftRestfulTests;
+			name = "SwiftRestfulTests iOS";
 			productName = SwiftRestfulTests;
-			productReference = F138AE7321B388E600C79E62 /* SwiftRestfulTests.xctest */;
+			productReference = F138AE7321B388E600C79E62 /* SwiftRestfulTests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -168,8 +168,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F138AE6921B388E600C79E62 /* SwiftRestful */,
-				F138AE7221B388E600C79E62 /* SwiftRestfulTests */,
+				F138AE6921B388E600C79E62 /* SwiftRestful iOS */,
+				F138AE7221B388E600C79E62 /* SwiftRestfulTests iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -212,7 +212,7 @@
 /* Begin PBXTargetDependency section */
 		F138AE7621B388E600C79E62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F138AE6921B388E600C79E62 /* SwiftRestful */;
+			target = F138AE6921B388E600C79E62 /* SwiftRestful iOS */;
 			targetProxy = F138AE7521B388E600C79E62 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -409,7 +409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F138AE7E21B388E600C79E62 /* Build configuration list for PBXNativeTarget "SwiftRestful" */ = {
+		F138AE7E21B388E600C79E62 /* Build configuration list for PBXNativeTarget "SwiftRestful iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F138AE7F21B388E600C79E62 /* Debug */,
@@ -418,7 +418,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F138AE8121B388E600C79E62 /* Build configuration list for PBXNativeTarget "SwiftRestfulTests" */ = {
+		F138AE8121B388E600C79E62 /* Build configuration list for PBXNativeTarget "SwiftRestfulTests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F138AE8221B388E600C79E62 /* Debug */,
