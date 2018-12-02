@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F138AE7421B388E600C79E62 /* SwiftRestful_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE6A21B388E600C79E62 /* SwiftRestful_iOS.framework */; };
+		F138AE7421B388E600C79E62 /* SwiftRestful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE6A21B388E600C79E62 /* SwiftRestful.framework */; };
 		F138AE7921B388E600C79E62 /* SwiftRestfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE7821B388E600C79E62 /* SwiftRestfulTests.swift */; };
 		F138AE7B21B388E600C79E62 /* SwiftRestful.h in Headers */ = {isa = PBXBuildFile; fileRef = F138AE6D21B388E600C79E62 /* SwiftRestful.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -23,7 +23,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F138AE6A21B388E600C79E62 /* SwiftRestful_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRestful_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F138AE6A21B388E600C79E62 /* SwiftRestful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRestful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F138AE6D21B388E600C79E62 /* SwiftRestful.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRestful.h; sourceTree = "<group>"; };
 		F138AE6E21B388E600C79E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F138AE7321B388E600C79E62 /* SwiftRestfulTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftRestfulTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F138AE7421B388E600C79E62 /* SwiftRestful_iOS.framework in Frameworks */,
+				F138AE7421B388E600C79E62 /* SwiftRestful.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 		F138AE6B21B388E600C79E62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F138AE6A21B388E600C79E62 /* SwiftRestful_iOS.framework */,
+				F138AE6A21B388E600C79E62 /* SwiftRestful.framework */,
 				F138AE7321B388E600C79E62 /* SwiftRestfulTests iOS.xctest */,
 			);
 			name = Products;
@@ -115,7 +115,7 @@
 			);
 			name = "SwiftRestful iOS";
 			productName = SwiftRestful;
-			productReference = F138AE6A21B388E600C79E62 /* SwiftRestful_iOS.framework */;
+			productReference = F138AE6A21B388E600C79E62 /* SwiftRestful.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F138AE7221B388E600C79E62 /* SwiftRestfulTests iOS */ = {
@@ -344,7 +344,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = SwiftRestful;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -364,7 +364,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = SwiftRestful;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
