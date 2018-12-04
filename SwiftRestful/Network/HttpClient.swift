@@ -62,7 +62,7 @@ public class HttpClient{
         download(url: url, method: method,headers:headers,contentData:nil,callback: callback)
     }
     
-    public func download(url:String,urlPostString:String,accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
+    public func downloadPOST(url:String,urlPostString:String,accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
         var headers:[String:String]=[:]
         headers[HttpHeaderCollection.ContentType]=HttpHeaderCollection.FormUrlContentType
         headers[HttpHeaderCollection.Accept]=(accept != nil) ? accept! : HttpHeaderCollection.XmlContentType
@@ -71,7 +71,7 @@ public class HttpClient{
     }
     
     
-    public func download(url:String,urlParams:[String:String],accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
+    public func downloadPOST(url:String,urlParams:[String:String],accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
         var headers:[String:String]=[:]
         headers[HttpHeaderCollection.ContentType]=HttpHeaderCollection.FormUrlContentType
         headers[HttpHeaderCollection.Accept]=(accept != nil) ? accept! : HttpHeaderCollection.XmlContentType
