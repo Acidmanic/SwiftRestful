@@ -21,6 +21,9 @@
 		F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */; };
 		F138AECD21B3A17800C79E62 /* OAuthClinet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC821B3A17800C79E62 /* OAuthClinet.swift */; };
 		F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */; };
+		F15623EE21B6E779004B9469 /* HttpApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623EC21B6E750004B9469 /* HttpApiClientTests.swift */; };
+		F15623F021B6E80D004B9469 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623EF21B6E80D004B9469 /* Todo.swift */; };
+		F15623F321B6EA4A004B9469 /* NamingRitchJsonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623F221B6EA4A004B9469 /* NamingRitchJsonable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestParameters.swift; sourceTree = "<group>"; };
 		F138AEC821B3A17800C79E62 /* OAuthClinet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthClinet.swift; sourceTree = "<group>"; };
 		F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
+		F15623EC21B6E750004B9469 /* HttpApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpApiClientTests.swift; sourceTree = "<group>"; };
+		F15623EF21B6E80D004B9469 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		F15623F221B6EA4A004B9469 /* NamingRitchJsonable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingRitchJsonable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +114,9 @@
 		F138AE7721B388E600C79E62 /* SwiftRestfulTests */ = {
 			isa = PBXGroup;
 			children = (
+				F15623F121B6E815004B9469 /* TestModels */,
 				F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */,
+				F15623EC21B6E750004B9469 /* HttpApiClientTests.swift */,
 				F138AE9721B3946200C79E62 /* JsonConversionTests.swift */,
 				F138AE7A21B388E600C79E62 /* Info.plist */,
 			);
@@ -135,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				F138AE8E21B3915D00C79E62 /* Jsonable.swift */,
+				F15623F221B6EA4A004B9469 /* NamingRitchJsonable.swift */,
 			);
 			path = JsonConversion;
 			sourceTree = "<group>";
@@ -158,6 +167,14 @@
 				F138AEC821B3A17800C79E62 /* OAuthClinet.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F15623F121B6E815004B9469 /* TestModels */ = {
+			isa = PBXGroup;
+			children = (
+				F15623EF21B6E80D004B9469 /* Todo.swift */,
+			);
+			name = TestModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +310,11 @@
 				F138AEC221B3A16D00C79E62 /* Timespan.swift in Sources */,
 				F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */,
 				F138AEC121B3A16D00C79E62 /* LoginResult.swift in Sources */,
+				F15623F021B6E80D004B9469 /* Todo.swift in Sources */,
 				F138AECD21B3A17800C79E62 /* OAuthClinet.swift in Sources */,
 				F138AE9021B3915D00C79E62 /* Jsonable.swift in Sources */,
 				F138AEC921B3A17800C79E62 /* HttpApiClient.swift in Sources */,
+				F15623F321B6EA4A004B9469 /* NamingRitchJsonable.swift in Sources */,
 				F138AECB21B3A17800C79E62 /* HttpRequestInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15623EE21B6E779004B9469 /* HttpApiClientTests.swift in Sources */,
 				F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */,
 				F138AE9921B39ACE00C79E62 /* JsonConversionTests.swift in Sources */,
 			);

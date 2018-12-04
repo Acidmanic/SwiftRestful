@@ -9,7 +9,7 @@
 import Foundation
 
 
-class HttpApiClient:HttpClient{
+public class HttpApiClient:HttpClient{
     
     func get(url:String,callback:@escaping(_ result:HttpResult<String>)->Void){
         download(url: url, method: HttpMethod.GET,
