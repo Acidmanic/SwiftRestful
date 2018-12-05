@@ -8,13 +8,6 @@
 
 import Foundation
 
-public enum HttpRequestResults{
-    case Succeed
-    case EmptyData
-    case Error
-    case InvalidUrl
-    case NoRequestMade
-}
 
 public class HttpResult<T>{
     public var RequestResult:HttpRequestResults=HttpRequestResults.NoRequestMade

@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 @testable import SwiftRestful
 
-class HttpClientBeTest:XCTestCase{
+class HttpApiClientTest:XCTestCase{
     
     
     func testBareGetShouldDownloadGoogleHomePage(){
