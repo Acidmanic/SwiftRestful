@@ -34,6 +34,8 @@
 		F17B09E421B79E3D00522B36 /* DELETERequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E321B79E3D00522B36 /* DELETERequestBuilder.swift */; };
 		F17B09E621B79E5000522B36 /* PATCHRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E521B79E5000522B36 /* PATCHRequestBuilder.swift */; };
 		F17B09E921B7A96D00522B36 /* HttpClinetBeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E721B7A92500522B36 /* HttpClinetBeTest.swift */; };
+		F17B09EB21B7CEFF00522B36 /* HttpBinAnything.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EA21B7CEFF00522B36 /* HttpBinAnything.swift */; };
+		F17B09ED21B7E39800522B36 /* HttpbinTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EC21B7E39800522B36 /* HttpbinTodo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		F17B09E321B79E3D00522B36 /* DELETERequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DELETERequestBuilder.swift; sourceTree = "<group>"; };
 		F17B09E521B79E5000522B36 /* PATCHRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PATCHRequestBuilder.swift; sourceTree = "<group>"; };
 		F17B09E721B7A92500522B36 /* HttpClinetBeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClinetBeTest.swift; sourceTree = "<group>"; };
+		F17B09EA21B7CEFF00522B36 /* HttpBinAnything.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBinAnything.swift; sourceTree = "<group>"; };
+		F17B09EC21B7E39800522B36 /* HttpbinTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpbinTodo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				F15623EF21B6E80D004B9469 /* Todo.swift */,
+				F17B09EA21B7CEFF00522B36 /* HttpBinAnything.swift */,
+				F17B09EC21B7E39800522B36 /* HttpbinTodo.swift */,
 			);
 			name = TestModels;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 				F17B09DA21B793A700522B36 /* ParameterConversion.swift in Sources */,
 				F138AECA21B3A17800C79E62 /* HttpClient.swift in Sources */,
 				F17B09E421B79E3D00522B36 /* DELETERequestBuilder.swift in Sources */,
+				F17B09EB21B7CEFF00522B36 /* HttpBinAnything.swift in Sources */,
 				F17B09DE21B79DAA00522B36 /* GETRequestBuilder.swift in Sources */,
 				F138AEC221B3A16D00C79E62 /* Timespan.swift in Sources */,
 				F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */,
@@ -357,6 +364,7 @@
 				F17B09E021B79DFC00522B36 /* POSTRequestBuilder.swift in Sources */,
 				F138AEC921B3A17800C79E62 /* HttpApiClient.swift in Sources */,
 				F17B09E221B79E3200522B36 /* PUTRequestBuilder.swift in Sources */,
+				F17B09ED21B7E39800522B36 /* HttpbinTodo.swift in Sources */,
 				F15623F321B6EA4A004B9469 /* NamingRitchJsonable.swift in Sources */,
 				F17B09D521B78D0000522B36 /* HttpBlient.swift in Sources */,
 				F17B09D821B78E4F00522B36 /* RequestBuilderBase.swift in Sources */,

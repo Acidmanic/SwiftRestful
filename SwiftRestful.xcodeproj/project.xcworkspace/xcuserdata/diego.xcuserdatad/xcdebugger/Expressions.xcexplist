@@ -3,15 +3,31 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "implicit closure #3 in closure #1 in HttpApiClientTests.testShouldGetATodoObjectWithId12():HttpApiClientTests.swift">
+      </ContextState>
+      <ContextState
          contextName = "HttpClient.performDownload(requestParams:callback:):HttpClient.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in HttpClient.performDownload(requestParams:callback:):HttpClient.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "(response as? HTTPURLResponse)">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "closure #1 in HttpClientBeTest.testPutSendTodoGetTodo():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClientBeTest.testGetTodoObjectSentTodoObject():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HttpBinTodo.load(jsonData:):HttpBinAnything.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClientBeTest.testGetTodoList():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClientBeTest.testGetTodoObjectUrlParams():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClientBeTest.testPostFormData():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "implicit closure #6 in closure #1 in HttpClientBeTest.testPutSendTodoGetTodo():HttpClinetBeTest.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in HttpClientTests.testShouldCallAPUTEndpointCorrectly():HttpClientTests.swift">
@@ -33,6 +49,35 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "HttpbinTodo.getTodo(jsondData:key:):HttpbinTodo.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "formData as? JsonMediumType">
+            </PersistentString>
+            <PersistentString
+               value = "formData as? String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClientBeTest.testPostByUrl():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClientBeTest.testPutSendTodoGetString():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClientBeTest.testPostRawData():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClientBeTest.testPostATodoObject():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "implicit closure #5 in closure #1 in HttpClientBeTest.testPostFormData():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClientBeTest.testGetTodoObjectUrlResource():HttpClinetBeTest.swift">
+      </ContextState>
+      <ContextState
          contextName = "Dictionary&lt;A, B&gt;.getValueByAnyOfCases(key:namingCases:):Jsonable.swift">
          <PersistentStrings>
             <PersistentString
@@ -41,13 +86,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "implicit closure #3 in closure #1 in HttpApiClientTests.testShouldGetATodoObjectWithId12():HttpApiClientTests.swift">
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in CallbackConversion.stringCallback(callback:):CallbackConversion.swift">
          <PersistentStrings>
             <PersistentString
                value = "String(data:result.Value,encoding:.utf8)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HttpClient.performDownload(requestParams:callback:):HttpClient.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(response as? HTTPURLResponse)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

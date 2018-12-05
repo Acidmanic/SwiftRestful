@@ -93,7 +93,7 @@ public class RequestBuilderBase{
     
     public func rawData(_ data:String!)->RequestBuilderBase{
         self.contentData = data?.data(using: self.encoding)
-        return self
+        return self.contentType(HttpHeaderCollection.TextContentType)
     }
     
     public func urlData(_ data:[String:String])->RequestBuilderBase{
@@ -101,7 +101,7 @@ public class RequestBuilderBase{
         return self
     }
     
-    public func formData(_ data:[String:String])->RequestBuilderBase{
+    public func xwwwFormData(_ data:[String:String])->RequestBuilderBase{
         self.contentData = ParameterConversion().encodeParams(params: data)
             .data(using: self.encoding)
         return self.contentType(HttpHeaderCollection.FormUrlContentType)
@@ -119,6 +119,7 @@ public class RequestBuilderBase{
         let goingUrl = self.url + (self.urlExtera == nil ? "" : ("?"+self.urlExtera) )
     
         self.client.download(url: goingUrl, method: self.method,headers: self.headers,
+                             contentData: self.contentData,
                              callback:  callback)
     }
     
@@ -127,6 +128,7 @@ public class RequestBuilderBase{
         let goingUrl = self.url + (self.urlExtera == nil ? "" : ("?"+self.urlExtera) )
         
         self.client.download(url: goingUrl, method: self.method,headers: self.headers,
+                             contentData: self.contentData,
                              callback: CallbackConversion().stringCallback(callback: callback))
         
     }
@@ -135,7 +137,9 @@ public class RequestBuilderBase{
         
         let goingUrl = self.url + (self.urlExtera == nil ? "" : ("?"+self.urlExtera) )
         
-        self.client.download(url: goingUrl, method: self.method,headers: self.headers,
+        self.accept(HttpHeaderCollection.JsonContentType)
+        .client.download(url: goingUrl, method: self.method,headers: self.headers,
+                         contentData: self.contentData,
                              callback: CallbackConversion().jsonCallback(callback: callback))
         
     }

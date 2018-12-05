@@ -27,6 +27,11 @@ class Todo:NamingRitchJsonableBase, Jsonable{
         self.id=0
     }
     
+    required init(id:Int) {
+        super.init()
+        self.id=id
+    }
+    
     func load(jsonData: JsonMediumType!) {
         self.title = getString(jsonData, "title")
         self.body = getString(jsonData, "body")

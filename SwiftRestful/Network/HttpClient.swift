@@ -25,6 +25,7 @@ public class HttpResult<T>{
     public var ResponseCode:Int=0
     public var ResponseHeaders:[String:String]=[:]
     public var ResponseCharset:String="utf-8"
+    public var ResponseCharsetEncoding:String.Encoding = .utf8
     
 }
 

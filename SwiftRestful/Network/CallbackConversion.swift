@@ -28,6 +28,7 @@ class CallbackConversion{
                 res.ResponseHeaders=result.ResponseHeaders
                 res.ResponseCharset=result.ResponseCharset
                 let encoding = self.getEncodingFor(charset: res.ResponseCharset)
+                res.ResponseCharsetEncoding = encoding
                 if result.RequestResult==HttpRequestResults.Succeed{
                     if let unwrapped = String(data:result.Value,encoding:encoding){
                         res.Value=unwrapped;

@@ -18,18 +18,45 @@ public class NamingRitchJsonableBase{
     }
     
     internal func getInt64(_ jsonData:JsonMediumType,_ key:String)->Int64!{
-    return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)as?Int64
+        if let data = jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions) {
+            if let idata = data as? Int64 {
+                return idata
+            }
+            if let sdata = data as? String, let idata = Int64(sdata){
+                return idata
+            }
+        }
+        return nil
     }
     
     internal func getInt(_ jsonData:JsonMediumType,_ key:String)->Int!{
-    return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)as?Int
+        if let data = jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions) {
+            if let idata = data as? Int {
+                return idata
+            }
+            if let sdata = data as? String{
+                if let idata = Int(sdata) {
+                    return idata
+                }
+            }
+        }
+        return nil
     }
     
     internal func getString(_ jsonData:JsonMediumType,_ key:String)->String!{
     return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)as?String
     }
     internal func getDouble(_ jsonData:JsonMediumType,_ key:String)->Double!{
-    return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)as?Double
+        
+        if let data = jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions){
+            if let dData = data as? Double {
+                return dData
+            }
+            if let sdata = data as? String , let dData = Double(sdata) {
+                return dData
+            }
+        }
+        return nil
     }
     internal func getTimespan(_ jsonData:JsonMediumType,_ key:String)->Timespan!{
     if let sTimespan = getString(jsonData, key){
