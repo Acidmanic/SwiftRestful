@@ -42,9 +42,7 @@ class OAuthClient{
                     OAuthParameterNames.Username:username,
                     OAuthParameterNames.Password:password]
         let client = HttpApiClient()
-        client.postReceiveJson(url: url,
-                               urlParams: params,
-                               callback:callback)
+        client.post.url(url).xwwwFormData(params).request(callback: callback)
     }
     
     func login(username:String,password:String,callback:@escaping(_ result:HttpResult<LoginResult>)->Void){
@@ -60,9 +58,7 @@ class OAuthClient{
                         OAuthParameterNames.GrantTypeRefreshToken,
                     OAuthParameterNames.RefreshToken:refreshToken]
         let client = HttpApiClient()
-        client.postReceiveJson(url: url,
-                               urlParams: params,
-                               callback:callback)
+        client.post.url(url).xwwwFormData(params).request(callback: callback)
     }
     
     func refresh(refreshToken:String,

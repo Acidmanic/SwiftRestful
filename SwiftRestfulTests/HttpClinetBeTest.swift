@@ -17,7 +17,7 @@ class HttpClientBeTest:XCTestCase{
         
         let expectations = XCTestExpectation(description: "BARE GET")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.get.url("http://www.google.com").request(){(result:HttpResult<String>) in
             
@@ -35,7 +35,7 @@ class HttpClientBeTest:XCTestCase{
         
         let expectations = XCTestExpectation(description: "GET")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.get.url("http://jsonplaceholder.typicode.com/todos/12")
             .request(){(result:HttpResult<Todo>) in
@@ -57,7 +57,7 @@ class HttpClientBeTest:XCTestCase{
         
         let expectations = XCTestExpectation(description: "GET")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.get.url("http://jsonplaceholder.typicode.com/todos")
             .urlData(["id":"12"])
@@ -80,7 +80,7 @@ class HttpClientBeTest:XCTestCase{
         
         let expectations = XCTestExpectation(description: "GET")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.get.url("http://jsonplaceholder.typicode.com/todos")
             .request(){(result:HttpResult<Todo>) in
@@ -102,7 +102,7 @@ class HttpClientBeTest:XCTestCase{
         
         let expectations = XCTestExpectation(description: "POST")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.post.url("http://jsonplaceholder.typicode.com/todos")
             .jsonData(Todo(title: "NewTodo", body: "TestObject", userId: 123))
@@ -128,7 +128,7 @@ class HttpClientBeTest:XCTestCase{
         
         let expectations = XCTestExpectation(description: "POST")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.post.url("http://httpbin.org/anything")
             .urlData(["title":"NewTodo","body":"TestObject","userId":"123"])
@@ -154,7 +154,7 @@ class HttpClientBeTest:XCTestCase{
         
         let expectations = XCTestExpectation(description: "POST")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.post.url("http://httpbin.org/anything")
             .rawData("ThisIsARawStringToServer").request()
@@ -178,7 +178,7 @@ class HttpClientBeTest:XCTestCase{
         
         let expectations = XCTestExpectation(description: "POST")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.post.url("http://jsonplaceholder.typicode.com/todos")
             .xwwwFormData(["title":"NewTodo","body":"dodo","userId":"123"])
@@ -203,7 +203,7 @@ class HttpClientBeTest:XCTestCase{
     func testPutSendTodoGetString(){
         let expectations = XCTestExpectation(description: "PUT")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.put.url("http://httpbin.org/anything")
             .jsonData(Todo(title: "NewTodo", body: "TestObject", userId: 123))
@@ -224,7 +224,7 @@ class HttpClientBeTest:XCTestCase{
     func testPutSendTodoGetObject(){
         let expectations = XCTestExpectation(description: "PUT")
         
-        let client = HttpBlient()
+        let client = HttpApiClient()
         
         client.put.url("http://httpbin.org/anything")
             .jsonData(Todo(title: "NewTodo", body: "TestObject", userId: 123))

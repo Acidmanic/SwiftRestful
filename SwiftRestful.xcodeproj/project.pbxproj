@@ -15,16 +15,14 @@
 		F138AE9921B39ACE00C79E62 /* JsonConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE9721B3946200C79E62 /* JsonConversionTests.swift */; };
 		F138AEC121B3A16D00C79E62 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEBF21B3A16D00C79E62 /* LoginResult.swift */; };
 		F138AEC221B3A16D00C79E62 /* Timespan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC021B3A16D00C79E62 /* Timespan.swift */; };
-		F138AEC921B3A17800C79E62 /* HttpApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC421B3A17800C79E62 /* HttpApiClient.swift */; };
 		F138AECA21B3A17800C79E62 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC521B3A17800C79E62 /* HttpClient.swift */; };
 		F138AECB21B3A17800C79E62 /* HttpRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */; };
 		F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */; };
 		F138AECD21B3A17800C79E62 /* OAuthClinet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC821B3A17800C79E62 /* OAuthClinet.swift */; };
 		F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */; };
-		F15623EE21B6E779004B9469 /* HttpApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623EC21B6E750004B9469 /* HttpApiClientTests.swift */; };
 		F15623F021B6E80D004B9469 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623EF21B6E80D004B9469 /* Todo.swift */; };
 		F15623F321B6EA4A004B9469 /* NamingRitchJsonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623F221B6EA4A004B9469 /* NamingRitchJsonable.swift */; };
-		F17B09D521B78D0000522B36 /* HttpBlient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D421B78D0000522B36 /* HttpBlient.swift */; };
+		F17B09D521B78D0000522B36 /* HttpApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D421B78D0000522B36 /* HttpApiClient.swift */; };
 		F17B09D821B78E4F00522B36 /* RequestBuilderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D721B78E4F00522B36 /* RequestBuilderBase.swift */; };
 		F17B09DA21B793A700522B36 /* ParameterConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D921B793A700522B36 /* ParameterConversion.swift */; };
 		F17B09DC21B79AE700522B36 /* CallbackConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09DB21B79AE700522B36 /* CallbackConversion.swift */; };
@@ -60,16 +58,14 @@
 		F138AE9721B3946200C79E62 /* JsonConversionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConversionTests.swift; sourceTree = "<group>"; };
 		F138AEBF21B3A16D00C79E62 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		F138AEC021B3A16D00C79E62 /* Timespan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timespan.swift; sourceTree = "<group>"; };
-		F138AEC421B3A17800C79E62 /* HttpApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpApiClient.swift; sourceTree = "<group>"; };
 		F138AEC521B3A17800C79E62 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestInterceptor.swift; sourceTree = "<group>"; };
 		F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestParameters.swift; sourceTree = "<group>"; };
 		F138AEC821B3A17800C79E62 /* OAuthClinet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthClinet.swift; sourceTree = "<group>"; };
 		F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
-		F15623EC21B6E750004B9469 /* HttpApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpApiClientTests.swift; sourceTree = "<group>"; };
 		F15623EF21B6E80D004B9469 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		F15623F221B6EA4A004B9469 /* NamingRitchJsonable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingRitchJsonable.swift; sourceTree = "<group>"; };
-		F17B09D421B78D0000522B36 /* HttpBlient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBlient.swift; sourceTree = "<group>"; };
+		F17B09D421B78D0000522B36 /* HttpApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpApiClient.swift; sourceTree = "<group>"; };
 		F17B09D721B78E4F00522B36 /* RequestBuilderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderBase.swift; sourceTree = "<group>"; };
 		F17B09D921B793A700522B36 /* ParameterConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterConversion.swift; sourceTree = "<group>"; };
 		F17B09DB21B79AE700522B36 /* CallbackConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackConversion.swift; sourceTree = "<group>"; };
@@ -140,7 +136,6 @@
 			children = (
 				F15623F121B6E815004B9469 /* TestModels */,
 				F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */,
-				F15623EC21B6E750004B9469 /* HttpApiClientTests.swift */,
 				F138AE9721B3946200C79E62 /* JsonConversionTests.swift */,
 				F138AE7A21B388E600C79E62 /* Info.plist */,
 				F17B09E721B7A92500522B36 /* HttpClinetBeTest.swift */,
@@ -186,12 +181,11 @@
 			isa = PBXGroup;
 			children = (
 				F17B09D621B78E2700522B36 /* RequestBuilders */,
-				F138AEC421B3A17800C79E62 /* HttpApiClient.swift */,
 				F138AEC521B3A17800C79E62 /* HttpClient.swift */,
 				F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */,
 				F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */,
 				F138AEC821B3A17800C79E62 /* OAuthClinet.swift */,
-				F17B09D421B78D0000522B36 /* HttpBlient.swift */,
+				F17B09D421B78D0000522B36 /* HttpApiClient.swift */,
 				F17B09D921B793A700522B36 /* ParameterConversion.swift */,
 				F17B09DB21B79AE700522B36 /* CallbackConversion.swift */,
 			);
@@ -362,11 +356,10 @@
 				F138AECD21B3A17800C79E62 /* OAuthClinet.swift in Sources */,
 				F138AE9021B3915D00C79E62 /* Jsonable.swift in Sources */,
 				F17B09E021B79DFC00522B36 /* POSTRequestBuilder.swift in Sources */,
-				F138AEC921B3A17800C79E62 /* HttpApiClient.swift in Sources */,
 				F17B09E221B79E3200522B36 /* PUTRequestBuilder.swift in Sources */,
 				F17B09ED21B7E39800522B36 /* HttpbinTodo.swift in Sources */,
 				F15623F321B6EA4A004B9469 /* NamingRitchJsonable.swift in Sources */,
-				F17B09D521B78D0000522B36 /* HttpBlient.swift in Sources */,
+				F17B09D521B78D0000522B36 /* HttpApiClient.swift in Sources */,
 				F17B09D821B78E4F00522B36 /* RequestBuilderBase.swift in Sources */,
 				F17B09E621B79E5000522B36 /* PATCHRequestBuilder.swift in Sources */,
 				F17B09DC21B79AE700522B36 /* CallbackConversion.swift in Sources */,
@@ -378,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15623EE21B6E779004B9469 /* HttpApiClientTests.swift in Sources */,
 				F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */,
 				F138AE9921B39ACE00C79E62 /* JsonConversionTests.swift in Sources */,
 				F17B09E921B7A96D00522B36 /* HttpClinetBeTest.swift in Sources */,

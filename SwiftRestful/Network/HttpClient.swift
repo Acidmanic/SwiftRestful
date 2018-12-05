@@ -58,45 +58,6 @@ public class HttpClient{
     private var instanceInterceptors:[HttpRequestInterceptor]=[]
     private static var globalInterceptors:[HttpRequestInterceptor]=[]
     
-    public func download(url:String,method:HttpMethod,callback:@escaping (_ result:HttpResult<Data>)->Void){
-        var headers:[String:String] = [:]
-        headers[HttpHeaderCollection.ContentType]=HttpHeaderCollection.TextContentType
-        headers[HttpHeaderCollection.Accept]=HttpHeaderCollection.TextContentType
-        download(url: url, method: method,
-                 headers:headers, callback: callback)
-    }
-    
-    
-    public func download(url:String,method:HttpMethod,headers:[String:String],callback:@escaping (_ result:HttpResult<Data>)->Void){
-        download(url: url, method: method,headers:headers,contentData:nil,callback: callback)
-    }
-    
-    public func downloadPOST(url:String,urlPostString:String,accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
-        var headers:[String:String]=[:]
-        headers[HttpHeaderCollection.ContentType]=HttpHeaderCollection.FormUrlContentType
-        headers[HttpHeaderCollection.Accept]=(accept != nil) ? accept! : HttpHeaderCollection.XmlContentType
-        let contentData = urlPostString.data(using: String.Encoding.utf8)
-        download(url: url, method: HttpMethod.POST,headers:headers,contentData:contentData,callback: callback)
-    }
-    
-    
-    public func downloadPOST(url:String,urlParams:[String:String],accept:String!,callback:@escaping (_ result:HttpResult<Data>)->Void){
-        var headers:[String:String]=[:]
-        headers[HttpHeaderCollection.ContentType]=HttpHeaderCollection.FormUrlContentType
-        headers[HttpHeaderCollection.Accept]=(accept != nil) ? accept! : HttpHeaderCollection.XmlContentType
-        let contentData = ParameterConversion().encodeParams(params: urlParams)
-            .data(using: String.Encoding.utf8)
-        download(url: url, method: HttpMethod.POST,headers:headers,contentData:contentData,callback: callback)
-    }
-    
-    public func download(url:String,method:HttpMethod,
-                  contentData:Data!,contentType:String,
-                  callback:@escaping (_ result:HttpResult<Data>)->Void){
-        var headers:[String:String]=[:]
-        headers[HttpHeaderCollection.ContentType]=contentType
-        headers[HttpHeaderCollection.Accept]=contentType
-        download(url: url, method: method, headers: headers, contentData: contentData, callback: callback)
-    }
     
     public func download(url:String,method:HttpMethod,headers:[String:String],
                   contentData:Data!,callback:@escaping (_ result:HttpResult<Data>)->Void){
