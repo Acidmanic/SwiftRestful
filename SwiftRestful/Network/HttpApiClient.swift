@@ -21,7 +21,7 @@ public class HttpApiClient:HttpClient{
              callback:@escaping(_ result:HttpResult<String>)->Void){
         var fullurl = url
         if params != nil {
-            fullurl = url + "?" + encodeParams(params:params)
+            fullurl = url + "?" + ParameterConversion().encodeParams(params:params)
         }
         download(url: fullurl, method: HttpMethod.GET,
                  headers: [HttpHeaderCollection.Accept:accept],
@@ -32,7 +32,7 @@ public class HttpApiClient:HttpClient{
                  callback:@escaping(_ result:HttpResult<T>)->Void){
         var fullurl = url
         if params != nil {
-            fullurl = url + "?" + encodeParams(params:params)
+            fullurl = url + "?" + ParameterConversion().encodeParams(params:params)
         }
         download(url: fullurl, method: HttpMethod.GET,
                  headers: [HttpHeaderCollection.Accept:HttpHeaderCollection.JsonContentType],
@@ -57,7 +57,7 @@ public class HttpApiClient:HttpClient{
     }
     
     func post(url:String,urlParams:[String:String],accept:String,callback:@escaping(_ result:HttpResult<String>)->Void){
-        let data = encodeParams(params: urlParams).data(using: String.Encoding.utf8)
+        let data = ParameterConversion().encodeParams(params: urlParams).data(using: String.Encoding.utf8)
         download(url: url, method: HttpMethod.POST,
                  headers: [HttpHeaderCollection.Accept:accept,
                            HttpHeaderCollection.ContentType:HttpHeaderCollection.FormUrlContentType],
@@ -65,7 +65,8 @@ public class HttpApiClient:HttpClient{
     }
     
     func postReceiveJson<T:Jsonable>(url:String,urlParams:[String:String],callback:@escaping(_ result:HttpResult<T>)->Void){
-        let data = encodeParams(params: urlParams).data(using: String.Encoding.utf8)
+        let data = ParameterConversion().encodeParams(params: urlParams)
+            .data(using: String.Encoding.utf8)
         download(url: url, method: HttpMethod.POST,
                  headers: [HttpHeaderCollection.Accept:HttpHeaderCollection.JsonContentType,
                            HttpHeaderCollection.ContentType:HttpHeaderCollection.FormUrlContentType],
@@ -75,19 +76,74 @@ public class HttpApiClient:HttpClient{
     
     
     func postInUrl(url:String,urlParams:[String:String],accept:String,callback:@escaping(_ result:HttpResult<String>)->Void){
-        download(url: url+"?"+encodeParams(params: urlParams), method: HttpMethod.POST,
+        download(url: url+"?"+ParameterConversion().encodeParams(params: urlParams),
+                 method: HttpMethod.POST,
                  headers: [HttpHeaderCollection.Accept:accept,
                            HttpHeaderCollection.ContentType:HttpHeaderCollection.FormUrlContentType],
                  contentData: nil, callback: stringCallback(callback: callback))
     }
     
     func postInUrlReceiveJson<T:Jsonable>(url:String,urlParams:[String:String],callback:@escaping(_ result:HttpResult<T>)->Void){
-        download(url: url+"?"+encodeParams(params: urlParams), method: HttpMethod.POST,
+        download(url: url+"?"+ParameterConversion().encodeParams(params: urlParams),
+                 method: HttpMethod.POST,
                  headers: [HttpHeaderCollection.Accept:HttpHeaderCollection.JsonContentType,
                            HttpHeaderCollection.ContentType:HttpHeaderCollection.FormUrlContentType],
                  contentData: nil, callback: jsonCallback(callback: callback))
     }
     
+    
+    
+    
+    func put(url:String,body:Data!,format:String,callback:@escaping(_ result:HttpResult<Data>)->Void){
+        download(url: url, method: HttpMethod.PUT,
+                 headers: [HttpHeaderCollection.ContentType:format,HttpHeaderCollection.Accept:format],
+                 contentData:body,callback:callback)
+    }
+    
+    func put<T:Jsonable>(url:String,json:Jsonable,callback:@escaping(_ result:HttpResult<T>)->Void){
+        let medium = json.getJsonData()
+        
+        let data = try? JSONSerialization.data(withJSONObject: medium, options: [])
+        download(url: url, method: HttpMethod.PUT,
+                 headers: [HttpHeaderCollection.ContentType:HttpHeaderCollection.JsonContentType,
+                           HttpHeaderCollection.Accept:HttpHeaderCollection.JsonContentType],
+                 contentData:data,
+                 callback: jsonCallback(callback: callback))
+    }
+    
+    func put(url:String,urlParams:[String:String],accept:String,callback:@escaping(_ result:HttpResult<String>)->Void){
+        let data = ParameterConversion().encodeParams(params: urlParams).data(using: String.Encoding.utf8)
+        download(url: url, method: HttpMethod.PUT,
+                 headers: [HttpHeaderCollection.Accept:accept,
+                           HttpHeaderCollection.ContentType:HttpHeaderCollection.FormUrlContentType],
+                 contentData: data, callback: stringCallback(callback: callback))
+    }
+    
+    func putReceiveJson<T:Jsonable>(url:String,urlParams:[String:String],callback:@escaping(_ result:HttpResult<T>)->Void){
+        let data = ParameterConversion().encodeParams(params: urlParams).data(using: String.Encoding.utf8)
+        download(url: url, method: HttpMethod.PUT,
+                 headers: [HttpHeaderCollection.Accept:HttpHeaderCollection.JsonContentType,
+                           HttpHeaderCollection.ContentType:HttpHeaderCollection.FormUrlContentType],
+                 contentData: data, callback: jsonCallback(callback: callback))
+    }
+    
+    
+    
+    func putInUrl(url:String,urlParams:[String:String],accept:String,callback:@escaping(_ result:HttpResult<String>)->Void){
+        download(url: url+"?"+ParameterConversion().encodeParams(params: urlParams),
+                 method: HttpMethod.PUT,
+                 headers: [HttpHeaderCollection.Accept:accept,
+                           HttpHeaderCollection.ContentType:HttpHeaderCollection.FormUrlContentType],
+                 contentData: nil, callback: stringCallback(callback: callback))
+    }
+    
+    func putInUrlReceiveJson<T:Jsonable>(url:String,urlParams:[String:String],callback:@escaping(_ result:HttpResult<T>)->Void){
+        download(url: url+"?"+ParameterConversion().encodeParams(params: urlParams),
+                 method: HttpMethod.PUT,
+                 headers: [HttpHeaderCollection.Accept:HttpHeaderCollection.JsonContentType,
+                           HttpHeaderCollection.ContentType:HttpHeaderCollection.FormUrlContentType],
+                 contentData: nil, callback: jsonCallback(callback: callback))
+    }
     
     
     

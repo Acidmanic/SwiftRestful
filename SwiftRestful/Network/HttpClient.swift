@@ -23,6 +23,8 @@ public class HttpResult<T>{
     public var resultIsArray:Bool=false
     public var ResponseError:Error!
     public var ResponseCode:Int=0
+    public var ResponseHeaders:[String:String]=[:]
+    public var ResponseCharset:String="utf-8"
     
 }
 
@@ -31,6 +33,7 @@ public enum HttpMethod:String{
     case GET
     case DELETE
     case PUT
+    case PATCH
 }
 
 public class HttpHeaderCollection{
@@ -42,6 +45,11 @@ public class HttpHeaderCollection{
     public static let Accept="Accept"
     public static let Authorization="Authorization"
     public static let AuthorizationBearerPrefix="bearer "
+    public static let AcceptEncoding="Accept-Encoding"
+    public static let AcceptCharset="Accept-Charset"
+    public static let EncodingGzip="gzip"
+    public static let EncodingCompress="compress"
+    public static let CharsetUtf8="utf-8"
 }
 
 public class HttpClient{
@@ -75,7 +83,8 @@ public class HttpClient{
         var headers:[String:String]=[:]
         headers[HttpHeaderCollection.ContentType]=HttpHeaderCollection.FormUrlContentType
         headers[HttpHeaderCollection.Accept]=(accept != nil) ? accept! : HttpHeaderCollection.XmlContentType
-        let contentData = encodeParams(params: urlParams).data(using: String.Encoding.utf8)
+        let contentData = ParameterConversion().encodeParams(params: urlParams)
+            .data(using: String.Encoding.utf8)
         download(url: url, method: HttpMethod.POST,headers:headers,contentData:contentData,callback: callback)
     }
     
@@ -129,14 +138,42 @@ public class HttpClient{
         }
         let task = URLSession.shared.dataTask(with: request!, completionHandler: { (data,response,error) in
             let responseCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+            
+            let res = (response as? HTTPURLResponse)
+            
+            let result = HttpResult<Data>()
+            
+            for (key,value) in (res?.allHeaderFields)! {
+                if let sKey = key as? String {
+                    if let sValue = value as? String{
+                        result.ResponseHeaders[sKey]=sValue
+                        if sKey == "Content-Charset" {
+                            result.ResponseCharset = sValue
+                        }else if sKey == "Content-Type" && sValue.contains("charset"){
+                            let parts = sValue.split(separator: ";")
+                            for part in parts {
+                                let nameValue = part.replacingOccurrences(of: " ", with: "")
+                                    .split(separator: "=")
+                                if String(nameValue[0])=="charset" {
+                                    result.ResponseCharset=String(nameValue[1])
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+ 
             if self.isReponseOK(code: responseCode) == false {
-                let result = HttpResult<Data>()
+        
                 result.RequestResult=HttpRequestResults.Error
                 result.ResponseError=error
                 result.ResponseCode=responseCode
+      
                 callback(result)
             }else{
-                callback(self.unwarpData(data:data,code:responseCode))
+                result.ResponseCode=responseCode
+                self.unwarpData(data:data,ret:result)
+                callback(result)
             }
         })
         task.resume()
@@ -145,28 +182,17 @@ public class HttpClient{
         return (code/100) == 2
     }
     
-    private func unwarpData(data:Data!,code:Int)->HttpResult<Data>{
-        let ret = HttpResult<Data>()
+    private func unwarpData(data:Data!,ret:HttpResult<Data>){
         if let safeData = data {
             ret.Value=safeData
             ret.RequestResult=HttpRequestResults.Succeed
         }else{
             ret.RequestResult=HttpRequestResults.EmptyData
         }
-        ret.ResponseCode=code
-        return ret;
     }
     
     
-    internal func encodeParams(params:[String:String])->String{
-        var ret = ""
-        var sep = ""
-        for (key,value) in params {
-            ret = ret + sep + key + "=" + value
-            sep="&"
-        }
-        return ret.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
-    }
+    
     
     private func interceptRequest(request:HttpRequestParameters)->HttpRequestParameters{
         var params  = request

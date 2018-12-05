@@ -94,4 +94,70 @@ class HttpApiClientTests: XCTestCase {
         
     }
     
+    
+    
+    //88888
+    
+    
+    func testPUTSendObjectReceiveObject() {
+        
+        let client = HttpApiClient()
+        
+        let expectation = XCTestExpectation(description: "test PUT, Send Object, receive Object")
+        
+        let todo = Todo(title:"Testitem",body:"TestItemBody",userId:123)
+        
+        client.put(url: "http://jsonplaceholder.typicode.com/todos",
+                    json: todo) { (result:HttpResult<Todo>) in
+                        XCTAssert(result.ResponseCode==201)
+                        XCTAssertNotNil(result.Value)
+                        XCTAssertNotNil(result.Value.id)
+                        XCTAssertEqual("Testitem", result.Value.title)
+                        XCTAssertEqual("TestItemBody", result.Value.body)
+                        XCTAssertEqual(123, result.Value.userId)
+                        expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+        
+    }
+    
+    
+    func testPUTUrlEncodeReceiveJson() {
+        
+        let client = HttpApiClient()
+        
+        let expectation = XCTestExpectation(description: "test PUT, Send UrlEncode, receive Object")
+        
+        client.putReceiveJson(url: "http://jsonplaceholder.typicode.com/todos",
+                               urlParams: ["title":"Testitem","body":"TestItemBody","userId":"123"]) { (result:HttpResult<Todo>) in
+                                XCTAssert(result.ResponseCode==201)
+                                XCTAssertNotNil(result.Value)
+                                XCTAssertNotNil(result.Value.id)
+                                XCTAssertEqual("Testitem", result.Value.title)
+                                XCTAssertEqual("TestItemBody", result.Value.body)
+                                expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+        
+    }
+    
+    func testPUTInUrlParamsReceiveJson() {
+        
+        let client = HttpApiClient()
+        
+        let expectation = XCTestExpectation(description: "test PUT, Send In Url, receive Object")
+        
+        client.putInUrlReceiveJson(url: "http://jsonplaceholder.typicode.com/todos",
+                                    urlParams: ["title":"Testitem","body":"TestItemBody","userId":"123"]) { (result:HttpResult<Todo>) in
+                                        XCTAssert(result.ResponseCode==201)
+                                        XCTAssertNotNil(result.Value)
+                                        expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+        
+    }
+    
 }
