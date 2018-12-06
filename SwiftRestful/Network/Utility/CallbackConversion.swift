@@ -20,21 +20,21 @@ class CallbackConversion{
         }
     }
     
-    func stringCallback(callback:@escaping(_ result:HttpResult<String>)->Void)
-        -> (_ result:HttpResult<Data>)->Void{
-            let ret = {(result:HttpResult<Data>) in
-                let res = HttpResult<String>()
+    func stringCallback(callback:@escaping(_ result:HttpResponse<String>)->Void)
+        -> (_ result:HttpResponse<Data>)->Void{
+            let ret = {(result:HttpResponse<Data>) in
+                let res = HttpResponse<String>()
                 res.ResponseCode=result.ResponseCode
                 res.ResponseHeaders=result.ResponseHeaders
                 res.ResponseCharset=result.ResponseCharset
                 let encoding = self.getEncodingFor(charset: res.ResponseCharset)
                 res.ResponseCharsetEncoding = encoding
-                if result.RequestResult==HttpRequestResults.Succeed{
+                if result.RequestResult==HttpReponseStatus.Succeed{
                     if let unwrapped = String(data:result.Value,encoding:encoding){
                         res.Value=unwrapped;
-                        res.RequestResult=HttpRequestResults.Succeed
+                        res.RequestResult=HttpReponseStatus.Succeed
                     }else{
-                        res.RequestResult=HttpRequestResults.EmptyData
+                        res.RequestResult=HttpReponseStatus.EmptyData
                     }
                 }else{
                     res.RequestResult=result.RequestResult
@@ -47,19 +47,19 @@ class CallbackConversion{
     }
     
     
-    func jsonCallback<T:Jsonable>(callback:@escaping(_ result:HttpResult<T>)->Void)
-        -> (_ result:HttpResult<Data>)->Void{
-            let ret = {(result:HttpResult<Data>) in
-                let res = HttpResult<T>()
+    func jsonCallback<T:Jsonable>(callback:@escaping(_ result:HttpResponse<T>)->Void)
+        -> (_ result:HttpResponse<Data>)->Void{
+            let ret = {(result:HttpResponse<Data>) in
+                let res = HttpResponse<T>()
                 res.ResponseCode=result.ResponseCode
-                if result.RequestResult == HttpRequestResults.Succeed{
+                if result.RequestResult == HttpReponseStatus.Succeed{
                     if let unwrapped = result.Value{
                         if let json = try? JSONSerialization.jsonObject(with: unwrapped
                             , options: .mutableContainers){
                             if let jdata = json as? JsonMediumType {
                                 res.Value = T();
                                 res.Value.load(jsonData: jdata)
-                                res.RequestResult=HttpRequestResults.Succeed
+                                res.RequestResult=HttpReponseStatus.Succeed
                             }else if let jarry = json as? JsonArrayMediumType{
                                 var array:[T]!=[]
                                 for jitem in jarry{
@@ -71,13 +71,13 @@ class CallbackConversion{
                                 }
                                 res.ArrayValue=array
                                 res.resultIsArray=true
-                                res.RequestResult=HttpRequestResults.Succeed
+                                res.RequestResult=HttpReponseStatus.Succeed
                             }else{
-                                res.RequestResult=HttpRequestResults.EmptyData
+                                res.RequestResult=HttpReponseStatus.EmptyData
                             }
                         }
                     }else{
-                        res.RequestResult=HttpRequestResults.EmptyData
+                        res.RequestResult=HttpReponseStatus.EmptyData
                     }
                 }else{
                     res.RequestResult=result.RequestResult

@@ -24,7 +24,7 @@ class HttpClientTests: XCTestCase {
         client.download(url: "http://jsonplaceholder.typicode.com/todos", method:HttpMethod.POST,
                         headers: [HttpHeaderCollection.ContentType:HttpHeaderCollection.JsonContentType],
                         contentData:data)
-        { (result:HttpResult<Data>) in
+        { (result:HttpResponse<Data>) in
             XCTAssertEqual(result.ResponseCode, 201)
             XCTAssertNotNil(result.Value)
             let sResult = String(data:result.Value,encoding:.utf8)
@@ -46,7 +46,7 @@ class HttpClientTests: XCTestCase {
         client.download(url: "http://jsonplaceholder.typicode.com/todos/12", method:HttpMethod.DELETE,
                         headers: [:],
                         contentData:nil)
-        { (result:HttpResult<Data>) in
+        { (result:HttpResponse<Data>) in
             XCTAssertEqual(result.ResponseCode, 200)
             XCTAssertNotNil(result.Value)
             let sResult = String(data:result.Value,encoding:.utf8)
@@ -67,7 +67,7 @@ class HttpClientTests: XCTestCase {
         client.download(url: "http://jsonplaceholder.typicode.com/todos/12", method:HttpMethod.PUT,
                         headers: [:],
                         contentData:nil)
-        { (result:HttpResult<Data>) in
+        { (result:HttpResponse<Data>) in
             XCTAssertEqual(result.ResponseCode, 200)
             XCTAssertNotNil(result.Value)
             let sResult = String(data:result.Value,encoding:.utf8)

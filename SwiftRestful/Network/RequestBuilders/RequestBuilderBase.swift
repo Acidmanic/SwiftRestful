@@ -114,7 +114,7 @@ public class RequestBuilderBase{
     
     /* result delivery? */
     
-    public func request(callback:@escaping(_ result:HttpResult<Data>)->Void){
+    public func request(callback:@escaping(_ result:HttpResponse<Data>)->Void){
         
         let goingUrl = self.url + (self.urlExtera == nil ? "" : ("?"+self.urlExtera) )
     
@@ -123,7 +123,7 @@ public class RequestBuilderBase{
                              callback:  callback)
     }
     
-    public func request(callback:@escaping(_ result:HttpResult<String>)->Void){
+    public func request(callback:@escaping(_ result:HttpResponse<String>)->Void){
         
         let goingUrl = self.url + (self.urlExtera == nil ? "" : ("?"+self.urlExtera) )
         
@@ -133,7 +133,7 @@ public class RequestBuilderBase{
         
     }
     
-    public func request<T:Jsonable>(callback:@escaping(_ result:HttpResult<T>)->Void){
+    public func request<T:Jsonable>(callback:@escaping(_ result:HttpResponse<T>)->Void){
         
         let goingUrl = self.url + (self.urlExtera == nil ? "" : ("?"+self.urlExtera) )
         

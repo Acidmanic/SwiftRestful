@@ -34,7 +34,10 @@
 		F17B09E921B7A96D00522B36 /* HttpApiClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E721B7A92500522B36 /* HttpApiClientTest.swift */; };
 		F17B09EB21B7CEFF00522B36 /* HttpBinAnything.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EA21B7CEFF00522B36 /* HttpBinAnything.swift */; };
 		F17B09ED21B7E39800522B36 /* HttpbinTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EC21B7E39800522B36 /* HttpbinTodo.swift */; };
-		F1BB207021B86EE400E99D60 /* HttpRequestResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpRequestResults.swift */; };
+		F1838C9321B8E35800B579E6 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9221B8E35800B579E6 /* HttpResponse.swift */; };
+		F1838C9521B8E37C00B579E6 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9421B8E37C00B579E6 /* HttpMethod.swift */; };
+		F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */; };
+		F1BB207021B86EE400E99D60 /* HttpReponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpReponseStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +81,10 @@
 		F17B09E721B7A92500522B36 /* HttpApiClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpApiClientTest.swift; sourceTree = "<group>"; };
 		F17B09EA21B7CEFF00522B36 /* HttpBinAnything.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBinAnything.swift; sourceTree = "<group>"; };
 		F17B09EC21B7E39800522B36 /* HttpbinTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpbinTodo.swift; sourceTree = "<group>"; };
-		F1BB206F21B86EE400E99D60 /* HttpRequestResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestResults.swift; sourceTree = "<group>"; };
+		F1838C9221B8E35800B579E6 /* HttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		F1838C9421B8E37C00B579E6 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderCollection.swift; sourceTree = "<group>"; };
+		F1BB206F21B86EE400E99D60 /* HttpReponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpReponseStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +226,10 @@
 			isa = PBXGroup;
 			children = (
 				F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */,
-				F1BB206F21B86EE400E99D60 /* HttpRequestResults.swift */,
+				F1BB206F21B86EE400E99D60 /* HttpReponseStatus.swift */,
+				F1838C9221B8E35800B579E6 /* HttpResponse.swift */,
+				F1838C9421B8E37C00B579E6 /* HttpMethod.swift */,
+				F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */,
 			);
 			path = HttpModels;
 			sourceTree = "<group>";
@@ -371,7 +380,9 @@
 				F138AEC221B3A16D00C79E62 /* Timespan.swift in Sources */,
 				F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */,
 				F138AEC121B3A16D00C79E62 /* LoginResult.swift in Sources */,
+				F1838C9321B8E35800B579E6 /* HttpResponse.swift in Sources */,
 				F15623F021B6E80D004B9469 /* Todo.swift in Sources */,
+				F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */,
 				F138AECD21B3A17800C79E62 /* OAuthClinet.swift in Sources */,
 				F138AE9021B3915D00C79E62 /* Jsonable.swift in Sources */,
 				F17B09E021B79DFC00522B36 /* POSTRequestBuilder.swift in Sources */,
@@ -379,10 +390,11 @@
 				F17B09ED21B7E39800522B36 /* HttpbinTodo.swift in Sources */,
 				F15623F321B6EA4A004B9469 /* NamingRitchJsonable.swift in Sources */,
 				F17B09D521B78D0000522B36 /* HttpApiClient.swift in Sources */,
+				F1838C9521B8E37C00B579E6 /* HttpMethod.swift in Sources */,
 				F17B09D821B78E4F00522B36 /* RequestBuilderBase.swift in Sources */,
 				F17B09E621B79E5000522B36 /* PATCHRequestBuilder.swift in Sources */,
 				F17B09DC21B79AE700522B36 /* CallbackConversion.swift in Sources */,
-				F1BB207021B86EE400E99D60 /* HttpRequestResults.swift in Sources */,
+				F1BB207021B86EE400E99D60 /* HttpReponseStatus.swift in Sources */,
 				F138AECB21B3A17800C79E62 /* HttpRequestInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

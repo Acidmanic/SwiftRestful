@@ -9,43 +9,6 @@
 import Foundation
 
 
-public class HttpResult<T>{
-    public var RequestResult:HttpRequestResults=HttpRequestResults.NoRequestMade
-    public var Value:T!
-    public var ArrayValue:[T]!
-    public var resultIsArray:Bool=false
-    public var ResponseError:Error!
-    public var ResponseCode:Int=0
-    public var ResponseHeaders:[String:String]=[:]
-    public var ResponseCharset:String="utf-8"
-    public var ResponseCharsetEncoding:String.Encoding = .utf8
-    
-}
-
-public enum HttpMethod:String{
-    case POST
-    case GET
-    case DELETE
-    case PUT
-    case PATCH
-}
-
-public class HttpHeaderCollection{
-    public static let ContentType="Content-Type"
-    public static let TextContentType="application/text"
-    public static let JsonContentType="application/json"
-    public static let XmlContentType="application/xml"
-    public static let FormUrlContentType="application/x-www-form-urlencoded; charset=utf-8"
-    public static let Accept="Accept"
-    public static let Authorization="Authorization"
-    public static let AuthorizationBearerPrefix="bearer "
-    public static let AcceptEncoding="Accept-Encoding"
-    public static let AcceptCharset="Accept-Charset"
-    public static let EncodingGzip="gzip"
-    public static let EncodingCompress="compress"
-    public static let CharsetUtf8="utf-8"
-}
-
 public class HttpClient{
     
     private var instanceInterceptors:[HttpRequestInterceptor]=[]
@@ -53,7 +16,7 @@ public class HttpClient{
     
     
     public func download(url:String,method:HttpMethod,headers:[String:String],
-                  contentData:Data!,callback:@escaping (_ result:HttpResult<Data>)->Void){
+                  contentData:Data!,callback:@escaping (_ result:HttpResponse<Data>)->Void){
         var params = HttpRequestParameters(url: url,
                                            method: method,
                                            headers: headers,
@@ -78,14 +41,14 @@ public class HttpClient{
         return request
     }
     
-    internal func badRequest(callback:@escaping (_ result:HttpResult<Data>)->Void){
-        let result = HttpResult<Data>()
-        result.RequestResult=HttpRequestResults.InvalidUrl
+    internal func badRequest(callback:@escaping (_ result:HttpResponse<Data>)->Void){
+        let result = HttpResponse<Data>()
+        result.RequestResult=HttpReponseStatus.InvalidUrl
         callback(result)
     }
     
     private func performDownload(requestParams:HttpRequestParameters,
-                                 callback:@escaping (_ result:HttpResult<Data>)->Void){
+                                 callback:@escaping (_ result:HttpResponse<Data>)->Void){
         let request = translateRequest(requestParams: requestParams)
         if request == nil {
             badRequest(callback:callback)
@@ -96,7 +59,7 @@ public class HttpClient{
             
             let res = (response as? HTTPURLResponse)
             
-            let result = HttpResult<Data>()
+            let result = HttpResponse<Data>()
             
             for (key,value) in (res?.allHeaderFields)! {
                 if let sKey = key as? String {
@@ -120,7 +83,7 @@ public class HttpClient{
  
             if self.isReponseOK(code: responseCode) == false {
         
-                result.RequestResult=HttpRequestResults.Error
+                result.RequestResult=HttpReponseStatus.Error
                 result.ResponseError=error
                 result.ResponseCode=responseCode
       
@@ -137,18 +100,15 @@ public class HttpClient{
         return (code/100) == 2
     }
     
-    private func unwarpData(data:Data!,ret:HttpResult<Data>){
+    private func unwarpData(data:Data!,ret:HttpResponse<Data>){
         if let safeData = data {
             ret.Value=safeData
-            ret.RequestResult=HttpRequestResults.Succeed
+            ret.RequestResult=HttpReponseStatus.Succeed
         }else{
-            ret.RequestResult=HttpRequestResults.EmptyData
+            ret.RequestResult=HttpReponseStatus.EmptyData
         }
     }
-    
-    
-    
-    
+
     private func interceptRequest(request:HttpRequestParameters)->HttpRequestParameters{
         var params  = request
         for interceptor in HttpClient.globalInterceptors{

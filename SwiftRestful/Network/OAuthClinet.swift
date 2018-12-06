@@ -36,7 +36,7 @@ class OAuthClient{
         self.clientId=clientId
     }
     
-    func login(url:String, username:String,password:String,callback:@escaping(_ result:HttpResult<LoginResult>)->Void){
+    func login(url:String, username:String,password:String,callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
         let params=[OAuthParameterNames.ClientId:self.clientId,
                     OAuthParameterNames.GrantType:OAuthParameterNames.GrantTypePassword,
                     OAuthParameterNames.Username:username,
@@ -45,14 +45,14 @@ class OAuthClient{
         client.post.url(url).xwwwFormData(params).request(callback: callback)
     }
     
-    func login(username:String,password:String,callback:@escaping(_ result:HttpResult<LoginResult>)->Void){
+    func login(username:String,password:String,callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
         login(url:baseUrl+defaultLoginUrl,
               username:username,password:password,callback:callback)
     }
     
     
     func refresh(url:String,refreshToken:String,
-                 callback:@escaping(_ result:HttpResult<LoginResult>)->Void){
+                 callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
         let params=[OAuthParameterNames.ClientId:self.clientId,
                     OAuthParameterNames.GrantType:
                         OAuthParameterNames.GrantTypeRefreshToken,
@@ -62,7 +62,7 @@ class OAuthClient{
     }
     
     func refresh(refreshToken:String,
-                 callback:@escaping(_ result:HttpResult<LoginResult>)->Void){
+                 callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
         refresh(url:baseUrl+defaultLoginUrl,
                 refreshToken:refreshToken,callback:callback)
     }
