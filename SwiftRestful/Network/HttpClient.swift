@@ -55,33 +55,16 @@ public class HttpClient{
             return
         }
         let task = URLSession.shared.dataTask(with: request!, completionHandler: { (data,response,error) in
-            let responseCode = (response as? HTTPURLResponse)?.statusCode ?? 0
             
             let res = (response as? HTTPURLResponse)
             
+            let responseCode = res?.statusCode ?? 0
+            
             let result = HttpResponse<Data>()
             
-            for (key,value) in (res?.allHeaderFields)! {
-                if let sKey = key as? String {
-                    if let sValue = value as? String{
-                        result.ResponseHeaders[sKey]=sValue
-                        if sKey == "Content-Charset" {
-                            result.ResponseCharset = sValue
-                        }else if sKey == "Content-Type" && sValue.contains("charset"){
-                            let parts = sValue.split(separator: ";")
-                            for part in parts {
-                                let nameValue = part.replacingOccurrences(of: " ", with: "")
-                                    .split(separator: "=")
-                                if String(nameValue[0])=="charset" {
-                                    result.ResponseCharset=String(nameValue[1])
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            self.fillResultFromHeaders(result: result, response: res)
  
-            if self.isReponseOK(code: responseCode) == false {
+            if HttpClient.isReponseOK(code: responseCode) == false {
         
                 result.RequestResult=HttpReponseStatus.Error
                 result.ResponseError=error
@@ -96,7 +79,41 @@ public class HttpClient{
         })
         task.resume()
     }
-    private func isReponseOK(code:Int)->Bool{
+    
+    private func fillResultFromHeaders(result: HttpResponse<Data>,response: HTTPURLResponse!){
+        if response != nil {
+            for (key,value) in (response?.allHeaderFields)! {
+                if let sKey = key as? String,let sValue = value as? String {
+                    result.ResponseHeaders[sKey]=sValue
+                    if sKey == HttpHeaderCollection.ContentCharset {
+                        result.ResponseCharset = sValue
+                    }else if sKey == HttpHeaderCollection.ContentType && sValue.contains("charset"){
+                        let parts = sValue.split(separator: ";")
+                        for part in parts {
+                            let nameValue = part.replacingOccurrences(of: " ", with: "")
+                                .split(separator: "=")
+                            if String(nameValue[0])=="charset" {
+                                result.ResponseCharset=String(nameValue[1])
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        result.ResponseCharsetEncoding = HttpClient.getEncodingFor(charset: result.ResponseCharset)
+    }
+    
+    public static func getEncodingFor(charset:String)->String.Encoding{
+        let iana = CFStringConvertIANACharSetNameToEncoding(charset as CFString)
+        if iana != kCFStringEncodingInvalidId {
+            let nsEncoding = CFStringConvertEncodingToNSStringEncoding(iana)
+            return String.Encoding(rawValue: nsEncoding)
+        } else {
+            return String.Encoding.utf8
+        }
+    }
+    
+    public static func isReponseOK(code:Int)->Bool{
         return (code/100) == 2
     }
     

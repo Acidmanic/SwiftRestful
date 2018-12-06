@@ -37,6 +37,8 @@
 		F1838C9321B8E35800B579E6 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9221B8E35800B579E6 /* HttpResponse.swift */; };
 		F1838C9521B8E37C00B579E6 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9421B8E37C00B579E6 /* HttpMethod.swift */; };
 		F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */; };
+		F1838C9921B8F3BC00B579E6 /* JsonConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */; };
+		F1838C9B21B8F3FD00B579E6 /* DataToJsonConversionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */; };
 		F1BB207021B86EE400E99D60 /* HttpReponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpReponseStatus.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		F1838C9221B8E35800B579E6 /* HttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
 		F1838C9421B8E37C00B579E6 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderCollection.swift; sourceTree = "<group>"; };
+		F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonConvert.swift; sourceTree = "<group>"; };
+		F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToJsonConversionResult.swift; sourceTree = "<group>"; };
 		F1BB206F21B86EE400E99D60 /* HttpReponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpReponseStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +176,8 @@
 			children = (
 				F138AE8E21B3915D00C79E62 /* Jsonable.swift */,
 				F15623F221B6EA4A004B9469 /* NamingRitchJsonable.swift */,
+				F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */,
+				F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */,
 			);
 			path = JsonConversion;
 			sourceTree = "<group>";
@@ -383,6 +389,8 @@
 				F1838C9321B8E35800B579E6 /* HttpResponse.swift in Sources */,
 				F15623F021B6E80D004B9469 /* Todo.swift in Sources */,
 				F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */,
+				F1838C9921B8F3BC00B579E6 /* JsonConvert.swift in Sources */,
+				F1838C9B21B8F3FD00B579E6 /* DataToJsonConversionResult.swift in Sources */,
 				F138AECD21B3A17800C79E62 /* OAuthClinet.swift in Sources */,
 				F138AE9021B3915D00C79E62 /* Jsonable.swift in Sources */,
 				F17B09E021B79DFC00522B36 /* POSTRequestBuilder.swift in Sources */,

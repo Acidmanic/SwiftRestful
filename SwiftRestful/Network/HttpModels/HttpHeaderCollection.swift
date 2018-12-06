@@ -22,4 +22,5 @@ public class HttpHeaderCollection{
     public static let EncodingGzip="gzip"
     public static let EncodingCompress="compress"
     public static let CharsetUtf8="utf-8"
+    public static let ContentCharset="Content-Charset"
 }
