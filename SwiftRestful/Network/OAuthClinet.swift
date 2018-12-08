@@ -31,6 +31,8 @@ class OAuthClient{
     
     private let defaultLoginUrl="/oauth/token"
     
+    public var skipInterception:Bool=true
+    
     init(baseUrl:String,clientId:String){
         self.baseUrl=baseUrl
         self.clientId=clientId
@@ -42,6 +44,9 @@ class OAuthClient{
                     OAuthParameterNames.Username:username,
                     OAuthParameterNames.Password:password]
         let client = HttpApiClient()
+        
+        client.skipInterception=skipInterception
+        
         client.post.url(url).xwwwFormData(params).request(callback: callback)
     }
     
@@ -58,6 +63,9 @@ class OAuthClient{
                         OAuthParameterNames.GrantTypeRefreshToken,
                     OAuthParameterNames.RefreshToken:refreshToken]
         let client = HttpApiClient()
+        
+        client.skipInterception=skipInterception
+        
         client.post.url(url).xwwwFormData(params).request(callback: callback)
     }
     

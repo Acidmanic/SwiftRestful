@@ -11,6 +11,7 @@ import Foundation
 
 public class HttpApiClient{
     
+    private static var globalInterceptors:[HttpRequestInterceptor]=[]
     
     public let get:RequestBuilderBase
     
@@ -24,9 +25,20 @@ public class HttpApiClient{
     
     private let client:HttpClient
     
+    var skipInterception:Bool{
+        get{
+            return self.client.skipInterceptions
+        }
+        set{
+            self.client.skipInterceptions = newValue
+        }
+    }
+    
     public required init(){
         
         self.client = HttpClient()
+        
+        self.client.pushInstanceInterceptor(interceptor: InterceptionProxy())
         
         self.get = GETRequestBuilder(client: self.client)
         
@@ -38,6 +50,29 @@ public class HttpApiClient{
         
         self.patch = PATCHRequestBuilder(client: self.client)
         
+    }
+    
+    public static func pushGlobalInterceptor(interceptor:HttpRequestInterceptor){
+        
+        HttpApiClient.globalInterceptors.append(interceptor)
+    }
+    
+    public func pushInstanceInterceptor(interceptor:HttpRequestInterceptor){
+        
+        self.client.pushInstanceInterceptor(interceptor: interceptor)
+    }
+    
+    
+    
+    private class InterceptionProxy:HttpRequestInterceptor{
+        
+        func onRequest(requestParams: HttpRequestParameters) -> HttpRequestParameters {
+            
+            return ListHttpInterceptor()
+                .intercept(interceptors: HttpApiClient.globalInterceptors
+                    ,params: requestParams)
+            
+        }
     }
     
     

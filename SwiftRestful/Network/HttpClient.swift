@@ -14,6 +14,7 @@ public class HttpClient{
     private var instanceInterceptors:[HttpRequestInterceptor]=[]
     private static var globalInterceptors:[HttpRequestInterceptor]=[]
     
+    var skipInterceptions:Bool=false
     
     public func download(url:String,method:HttpMethod,headers:[String:String],
                   contentData:Data!,callback:@escaping (_ result:HttpResponse<Data>)->Void){
@@ -127,14 +128,17 @@ public class HttpClient{
     }
 
     private func interceptRequest(request:HttpRequestParameters)->HttpRequestParameters{
-        var params  = request
-        for interceptor in HttpClient.globalInterceptors{
-            params = interceptor.onRequest(requestParams: params)
+        
+        if skipInterceptions {
+            return request
         }
-        for interceptor in self.instanceInterceptors{
-            params = interceptor.onRequest(requestParams: params)
-        }
-        return params
+        
+        let params = ListHttpInterceptor()
+            .intercept(interceptors:HttpClient.globalInterceptors, params:request)
+        
+        return ListHttpInterceptor()
+            .intercept(interceptors:self.instanceInterceptors, params:params)
+    
     }
     
     public func pushInstanceInterceptor(interceptor:HttpRequestInterceptor){

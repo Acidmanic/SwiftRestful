@@ -12,18 +12,31 @@ public class CrudClient{
     
     private var endpoint:String
     
+    private let httpApiClient:HttpApiClient
     
+    private static var globalInterceptors:[HttpRequestInterceptor]=[]
+    
+    
+    private class InterceptionProxy:HttpRequestInterceptor{
+        func onRequest(requestParams: HttpRequestParameters) -> HttpRequestParameters {
+            return ListHttpInterceptor().intercept(interceptors: CrudClient.globalInterceptors
+                ,params: requestParams)
+        }
+    }
     
     public init(endpoint:String) {
+        
+        httpApiClient = HttpApiClient()
+        
+        httpApiClient.pushInstanceInterceptor(interceptor: InterceptionProxy())
+        
         self.endpoint = endpoint
     }
     
     
     public func create<T:Jsonable>(object:T, callback: @escaping(_ response:T)->Void){
-    
-        let client = HttpApiClient()
         
-        client.post.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
+        self.httpApiClient.post.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
             .contentType(HttpHeaderCollection.JsonContentType)
             .jsonData(object).request { (response:HttpResponse<T>) in
                 
@@ -35,9 +48,7 @@ public class CrudClient{
     
     public func read<T:Jsonable>(callback: @escaping(_ response:[T])->Void){
         
-        let client = HttpApiClient()
-        
-        client.get.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
+        self.httpApiClient.get.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
             .contentType(HttpHeaderCollection.JsonContentType)
             .request{ (response:HttpResponse<T>) in
                 
@@ -58,9 +69,8 @@ public class CrudClient{
     
     public func read<T:Jsonable>(params:[String:String],
                                  callback: @escaping(_ response:T?)->Void){
-        let client = HttpApiClient()
         
-        client.get.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
+        self.httpApiClient.get.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
             .urlData(params).request{ (response:HttpResponse<T>) in
                 
                 var object:T? = nil
@@ -87,9 +97,7 @@ public class CrudClient{
     
     public func update<T:Jsonable>(object:T, callback: @escaping(_ success:Bool)->Void){
         
-        let client = HttpApiClient()
-        
-        client.put.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
+        self.httpApiClient.put.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
             .contentType(HttpHeaderCollection.JsonContentType)
             .jsonData(object).request { (response:HttpResponse<JsonableVoid>) in
                 
@@ -101,9 +109,7 @@ public class CrudClient{
     
     public func update<T:Jsonable>(object:T, callback: @escaping(_ response:T?)->Void){
         
-        let client = HttpApiClient()
-        
-        client.put.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
+        self.httpApiClient.put.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
             .contentType(HttpHeaderCollection.JsonContentType)
             .jsonData(object).request { (response:HttpResponse<T>) in
                 
@@ -121,9 +127,8 @@ public class CrudClient{
     
     public func delete(params:[String:String],
                                  callback: @escaping(_ response:Bool)->Void){
-        let client = HttpApiClient()
         
-        client.delete.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
+        self.httpApiClient.delete.url(self.endpoint).accept(HttpHeaderCollection.JsonContentType)
             .urlData(params).request{ (response:HttpResponse<JsonableVoid>) in
                 
                 callback(HttpClient.isReponseOK(code: response.ResponseCode))
@@ -131,5 +136,11 @@ public class CrudClient{
         
     }
     
+    public func pushInstanceInterceptor(interceptor:HttpRequestInterceptor){
+        self.httpApiClient.pushInstanceInterceptor(interceptor: interceptor)
+    }
     
+    public static func pushGlobalInterceptor(interceptor:HttpRequestInterceptor){
+        CrudClient.globalInterceptors.append(interceptor)
+    }
 }
