@@ -31,13 +31,13 @@ class CallbackConversion{
                 
                 self.mapExceptForData(src: result, dst: res)
                 
-                if result.RequestResult==HttpReponseStatus.Succeed{
+                if result.RequestResult==HttpResponseStatus.Succeed{
                     
                     if let unwrapped = String(data:result.Value,encoding:res.ResponseCharsetEncoding){
                         res.Value=unwrapped;
-                        res.RequestResult=HttpReponseStatus.Succeed
+                        res.RequestResult=HttpResponseStatus.Succeed
                     }else{
-                        res.RequestResult=HttpReponseStatus.EmptyData
+                        res.RequestResult=HttpResponseStatus.EmptyData
                     }
                     
                 }
@@ -58,7 +58,7 @@ class CallbackConversion{
                 
                 self.mapExceptForData(src: result, dst: res)
                 
-                if result.RequestResult == HttpReponseStatus.Succeed{
+                if result.RequestResult == HttpResponseStatus.Succeed{
                     
                     self.putDataInResult(data: result.Value, result: res)
                 }
@@ -76,7 +76,7 @@ class CallbackConversion{
         
         if conversionResult.succeed {
             
-            result.RequestResult = HttpReponseStatus.Succeed
+            result.RequestResult = HttpResponseStatus.Succeed
             
             result.resultIsArray = conversionResult.isArray
             
@@ -87,7 +87,7 @@ class CallbackConversion{
             }
             
         }else{
-            result.RequestResult = HttpReponseStatus.EmptyData
+            result.RequestResult = HttpResponseStatus.EmptyData
         }
     }
     

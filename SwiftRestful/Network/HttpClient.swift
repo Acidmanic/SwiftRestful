@@ -43,7 +43,7 @@ public class HttpClient{
     
     internal func badRequest(callback:@escaping (_ result:HttpResponse<Data>)->Void){
         let result = HttpResponse<Data>()
-        result.RequestResult=HttpReponseStatus.InvalidUrl
+        result.RequestResult=HttpResponseStatus.InvalidUrl
         callback(result)
     }
     
@@ -66,7 +66,7 @@ public class HttpClient{
  
             if HttpClient.isReponseOK(code: responseCode) == false {
         
-                result.RequestResult=HttpReponseStatus.Error
+                result.RequestResult=HttpResponseStatus.Error
                 result.ResponseError=error
                 result.ResponseCode=responseCode
       
@@ -120,9 +120,9 @@ public class HttpClient{
     private func unwarpData(data:Data!,ret:HttpResponse<Data>){
         if let safeData = data {
             ret.Value=safeData
-            ret.RequestResult=HttpReponseStatus.Succeed
+            ret.RequestResult=HttpResponseStatus.Succeed
         }else{
-            ret.RequestResult=HttpReponseStatus.EmptyData
+            ret.RequestResult=HttpResponseStatus.EmptyData
         }
     }
 

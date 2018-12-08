@@ -39,7 +39,8 @@
 		F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */; };
 		F1838C9921B8F3BC00B579E6 /* JsonConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */; };
 		F1838C9B21B8F3FD00B579E6 /* DataToJsonConversionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */; };
-		F1BB207021B86EE400E99D60 /* HttpReponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpReponseStatus.swift */; };
+		F1BB207021B86EE400E99D60 /* HttpResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */; };
+		F1D331A521BB76D6003C2D05 /* RestfulClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A421BB76D6003C2D05 /* RestfulClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +89,8 @@
 		F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderCollection.swift; sourceTree = "<group>"; };
 		F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonConvert.swift; sourceTree = "<group>"; };
 		F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToJsonConversionResult.swift; sourceTree = "<group>"; };
-		F1BB206F21B86EE400E99D60 /* HttpReponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpReponseStatus.swift; sourceTree = "<group>"; };
+		F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseStatus.swift; sourceTree = "<group>"; };
+		F1D331A421BB76D6003C2D05 /* RestfulClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */,
 				F138AEC821B3A17800C79E62 /* OAuthClinet.swift */,
 				F17B09D421B78D0000522B36 /* HttpApiClient.swift */,
+				F1D331A421BB76D6003C2D05 /* RestfulClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -232,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */,
-				F1BB206F21B86EE400E99D60 /* HttpReponseStatus.swift */,
+				F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */,
 				F1838C9221B8E35800B579E6 /* HttpResponse.swift */,
 				F1838C9421B8E37C00B579E6 /* HttpMethod.swift */,
 				F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */,
@@ -391,6 +394,7 @@
 				F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */,
 				F1838C9921B8F3BC00B579E6 /* JsonConvert.swift in Sources */,
 				F1838C9B21B8F3FD00B579E6 /* DataToJsonConversionResult.swift in Sources */,
+				F1D331A521BB76D6003C2D05 /* RestfulClient.swift in Sources */,
 				F138AECD21B3A17800C79E62 /* OAuthClinet.swift in Sources */,
 				F138AE9021B3915D00C79E62 /* Jsonable.swift in Sources */,
 				F17B09E021B79DFC00522B36 /* POSTRequestBuilder.swift in Sources */,
@@ -402,7 +406,7 @@
 				F17B09D821B78E4F00522B36 /* RequestBuilderBase.swift in Sources */,
 				F17B09E621B79E5000522B36 /* PATCHRequestBuilder.swift in Sources */,
 				F17B09DC21B79AE700522B36 /* CallbackConversion.swift in Sources */,
-				F1BB207021B86EE400E99D60 /* HttpReponseStatus.swift in Sources */,
+				F1BB207021B86EE400E99D60 /* HttpResponseStatus.swift in Sources */,
 				F138AECB21B3A17800C79E62 /* HttpRequestInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

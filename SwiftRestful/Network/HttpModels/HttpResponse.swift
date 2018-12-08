@@ -9,7 +9,7 @@
 import Foundation
 
 public class HttpResponse<T>{
-    public var RequestResult:HttpReponseStatus=HttpReponseStatus.NoRequestMade
+    public var RequestResult:HttpResponseStatus=HttpResponseStatus.NoRequestMade
     public var Value:T!
     public var ArrayValue:[T]!
     public var resultIsArray:Bool=false

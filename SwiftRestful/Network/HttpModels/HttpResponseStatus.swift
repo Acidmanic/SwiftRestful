@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum HttpReponseStatus{
+public enum HttpResponseStatus{
     case Succeed
     case EmptyData
     case Error
