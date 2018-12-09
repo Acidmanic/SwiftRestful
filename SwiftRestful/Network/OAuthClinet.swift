@@ -10,6 +10,7 @@ import Foundation
 
 public class OAuthParameterNames{
     public static let ClientId="client_id"
+    public static let ClientSecret="client_secret"
     public static let GrantType="grant_type"
     public static let GrantTypePassword="password"
     public static let GrantTypeRefreshToken="refresh_token"
@@ -28,7 +29,7 @@ public class OAuthClient{
     
     private var baseUrl:String
     private var clientId:String
-    
+    private var clientSecret:String!
     private let defaultLoginUrl="/oauth/token"
     
     public var skipInterception:Bool=true
@@ -38,11 +39,20 @@ public class OAuthClient{
         self.clientId=clientId
     }
     
+    init(baseUrl:String,clientId:String,clientSecret:String){
+        self.baseUrl=baseUrl
+        self.clientId=clientId
+        self.clientSecret=clientSecret
+    }
+    
     public func login(url:String, username:String,password:String,callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
-        let params=[OAuthParameterNames.ClientId:self.clientId,
+        var params=[OAuthParameterNames.ClientId:self.clientId,
                     OAuthParameterNames.GrantType:OAuthParameterNames.GrantTypePassword,
                     OAuthParameterNames.Username:username,
                     OAuthParameterNames.Password:password]
+        if self.clientSecret != nil {
+            params[OAuthParameterNames.ClientSecret] = self.clientSecret
+        }
         let client = HttpApiClient()
         
         client.skipInterception=skipInterception
@@ -59,10 +69,15 @@ public class OAuthClient{
     
     public func refresh(url:String,refreshToken:String,
                  callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
-        let params=[OAuthParameterNames.ClientId:self.clientId,
+        var params=[OAuthParameterNames.ClientId:self.clientId,
                     OAuthParameterNames.GrantType:
                         OAuthParameterNames.GrantTypeRefreshToken,
                     OAuthParameterNames.RefreshToken:refreshToken]
+        
+        if self.clientSecret != nil {
+            params[OAuthParameterNames.ClientSecret] = self.clientSecret
+        }
+        
         let client = HttpApiClient()
         
         client.skipInterception=skipInterception
