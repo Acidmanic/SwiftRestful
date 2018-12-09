@@ -9,13 +9,13 @@
 import Foundation
 
 
-class LoginResult:Jsonable{
-    var accessToken:String!
-    var tokenType:String!
-    var expiresIn:Int32!
-    var refreshToken:String!
-    required init(){}
-    func load(jsonData: JsonMediumType!) {
+public class LoginResult:Jsonable{
+    public var accessToken:String!
+    public var tokenType:String!
+    public var expiresIn:Int32!
+    public var refreshToken:String!
+    public required init(){}
+    public func load(jsonData: JsonMediumType!) {
         if let data = jsonData{
             if let at = data["access_token"] as? String{
                 self.accessToken = at.trimmingCharacters(in: NSCharacterSet.whitespaces)

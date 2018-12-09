@@ -39,6 +39,9 @@
 		F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */; };
 		F1838C9921B8F3BC00B579E6 /* JsonConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */; };
 		F1838C9B21B8F3FD00B579E6 /* DataToJsonConversionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */; };
+		F183A63421BC62D5006CCCCF /* OAuthLoginInterceptopr.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63321BC62D5006CCCCF /* OAuthLoginInterceptopr.swift */; };
+		F183A63621BC674F006CCCCF /* CredentialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63521BC674F006CCCCF /* CredentialProvider.swift */; };
+		F183A63821BC67A6006CCCCF /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63721BC67A6006CCCCF /* Credentials.swift */; };
 		F1BB207021B86EE400E99D60 /* HttpResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */; };
 		F1D331A521BB76D6003C2D05 /* CrudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A421BB76D6003C2D05 /* CrudClient.swift */; };
 		F1D331A721BBB7B1003C2D05 /* JsonableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A621BBB7B1003C2D05 /* JsonableVoid.swift */; };
@@ -94,6 +97,9 @@
 		F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderCollection.swift; sourceTree = "<group>"; };
 		F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonConvert.swift; sourceTree = "<group>"; };
 		F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToJsonConversionResult.swift; sourceTree = "<group>"; };
+		F183A63321BC62D5006CCCCF /* OAuthLoginInterceptopr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthLoginInterceptopr.swift; sourceTree = "<group>"; };
+		F183A63521BC674F006CCCCF /* CredentialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialProvider.swift; sourceTree = "<group>"; };
+		F183A63721BC67A6006CCCCF /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseStatus.swift; sourceTree = "<group>"; };
 		F1D331A421BB76D6003C2D05 /* CrudClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudClient.swift; sourceTree = "<group>"; };
 		F1D331A621BBB7B1003C2D05 /* JsonableVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonableVoid.swift; sourceTree = "<group>"; };
@@ -201,6 +207,7 @@
 				F138AEBF21B3A16D00C79E62 /* LoginResult.swift */,
 				F138AEC021B3A16D00C79E62 /* Timespan.swift */,
 				F1D331A621BBB7B1003C2D05 /* JsonableVoid.swift */,
+				F183A63721BC67A6006CCCCF /* Credentials.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +278,8 @@
 			children = (
 				F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */,
 				F1D331B021BC4061003C2D05 /* ListHttpInterceptor.swift */,
+				F183A63321BC62D5006CCCCF /* OAuthLoginInterceptopr.swift */,
+				F183A63521BC674F006CCCCF /* CredentialProvider.swift */,
 			);
 			name = Interception;
 			sourceTree = "<group>";
@@ -407,12 +416,14 @@
 				F17B09DA21B793A700522B36 /* ParameterConversion.swift in Sources */,
 				F138AECA21B3A17800C79E62 /* HttpClient.swift in Sources */,
 				F17B09E421B79E3D00522B36 /* DELETERequestBuilder.swift in Sources */,
+				F183A63821BC67A6006CCCCF /* Credentials.swift in Sources */,
 				F17B09EB21B7CEFF00522B36 /* HttpBinAnything.swift in Sources */,
 				F17B09DE21B79DAA00522B36 /* GETRequestBuilder.swift in Sources */,
 				F138AEC221B3A16D00C79E62 /* Timespan.swift in Sources */,
 				F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */,
 				F138AEC121B3A16D00C79E62 /* LoginResult.swift in Sources */,
 				F1838C9321B8E35800B579E6 /* HttpResponse.swift in Sources */,
+				F183A63421BC62D5006CCCCF /* OAuthLoginInterceptopr.swift in Sources */,
 				F15623F021B6E80D004B9469 /* Todo.swift in Sources */,
 				F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */,
 				F1838C9921B8F3BC00B579E6 /* JsonConvert.swift in Sources */,
@@ -428,6 +439,7 @@
 				F17B09D521B78D0000522B36 /* HttpApiClient.swift in Sources */,
 				F1838C9521B8E37C00B579E6 /* HttpMethod.swift in Sources */,
 				F17B09D821B78E4F00522B36 /* RequestBuilderBase.swift in Sources */,
+				F183A63621BC674F006CCCCF /* CredentialProvider.swift in Sources */,
 				F17B09E621B79E5000522B36 /* PATCHRequestBuilder.swift in Sources */,
 				F17B09DC21B79AE700522B36 /* CallbackConversion.swift in Sources */,
 				F1D331A721BBB7B1003C2D05 /* JsonableVoid.swift in Sources */,

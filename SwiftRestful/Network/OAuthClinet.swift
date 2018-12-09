@@ -18,10 +18,10 @@ public class OAuthParameterNames{
     public static let RefreshToken="refresh_token"
 }
 
-class OAuthClient{
+public class OAuthClient{
     
     
-    enum TokenTypes:String{
+    public enum TokenTypes:String{
         case Bearer
     }
     
@@ -38,7 +38,7 @@ class OAuthClient{
         self.clientId=clientId
     }
     
-    func login(url:String, username:String,password:String,callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
+    public func login(url:String, username:String,password:String,callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
         let params=[OAuthParameterNames.ClientId:self.clientId,
                     OAuthParameterNames.GrantType:OAuthParameterNames.GrantTypePassword,
                     OAuthParameterNames.Username:username,
@@ -50,13 +50,14 @@ class OAuthClient{
         client.post.url(url).xwwwFormData(params).request(callback: callback)
     }
     
-    func login(username:String,password:String,callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
+    public func login(username:String,password:String,callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
+        //TODO: use a proper resolve function to concatinate url fragments
         login(url:baseUrl+defaultLoginUrl,
               username:username,password:password,callback:callback)
     }
     
     
-    func refresh(url:String,refreshToken:String,
+    public func refresh(url:String,refreshToken:String,
                  callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
         let params=[OAuthParameterNames.ClientId:self.clientId,
                     OAuthParameterNames.GrantType:
@@ -69,7 +70,7 @@ class OAuthClient{
         client.post.url(url).xwwwFormData(params).request(callback: callback)
     }
     
-    func refresh(refreshToken:String,
+    public func refresh(refreshToken:String,
                  callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
         refresh(url:baseUrl+defaultLoginUrl,
                 refreshToken:refreshToken,callback:callback)
