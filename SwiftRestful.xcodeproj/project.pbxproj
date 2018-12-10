@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F1063DAC21BEBB17003855D9 /* RevokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1063DAB21BEBB17003855D9 /* RevokeData.swift */; };
+		F1063DAF21BEC153003855D9 /* AutoLoginCrudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1063DAD21BEC122003855D9 /* AutoLoginCrudClient.swift */; };
 		F138AE7B21B388E600C79E62 /* SwiftRestful.h in Headers */ = {isa = PBXBuildFile; fileRef = F138AE6D21B388E600C79E62 /* SwiftRestful.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F138AE8621B38BC800C79E62 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = F138AE8521B38BC800C79E62 /* Cartfile */; };
 		F138AE8921B38E3800C79E62 /* NamingConventions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE8821B38E3800C79E62 /* NamingConventions.framework */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		F1063DAB21BEBB17003855D9 /* RevokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeData.swift; sourceTree = "<group>"; };
+		F1063DAD21BEC122003855D9 /* AutoLoginCrudClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginCrudClient.swift; sourceTree = "<group>"; };
 		F138AE6A21B388E600C79E62 /* SwiftRestful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRestful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F138AE6D21B388E600C79E62 /* SwiftRestful.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRestful.h; sourceTree = "<group>"; };
 		F138AE6E21B388E600C79E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				F17B09E721B7A92500522B36 /* HttpApiClientTest.swift */,
 				F1D331A821BBBC9E003C2D05 /* CrudClientTests.swift */,
 				F17FF97521BD1DC4008DF950 /* OAuthClientTests.swift */,
+				F1063DAD21BEC122003855D9 /* AutoLoginCrudClient.swift */,
 			);
 			path = SwiftRestfulTests;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17FF97721BD1DE6008DF950 /* OAuthClientTests.swift in Sources */,
+				F1063DAF21BEC153003855D9 /* AutoLoginCrudClient.swift in Sources */,
 				F1D331A921BBBC9E003C2D05 /* CrudClientTests.swift in Sources */,
 				F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */,
 				F138AE9921B39ACE00C79E62 /* JsonConversionTests.swift in Sources */,

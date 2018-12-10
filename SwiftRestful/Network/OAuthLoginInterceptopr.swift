@@ -27,11 +27,13 @@ public class OAuthLoginInterceptor:HttpRequestInterceptor{
     
     private var clientId:String
     
-    init(endpointUrl:String,clientId:String) {
+    init(endpointUrl:String,clientId:String,credentialProvider:CredentialProvidr) {
         
         self.endpointUrl = endpointUrl
         
         self.clientId = clientId
+        
+        self.credentialProvider = credentialProvider
     }
     
     public func onRequest(requestParams: HttpRequestParameters) -> HttpRequestParameters {
