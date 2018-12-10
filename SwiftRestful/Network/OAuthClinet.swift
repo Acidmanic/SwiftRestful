@@ -17,6 +17,7 @@ public class OAuthParameterNames{
     public static let Username="username"
     public static let Password="password"
     public static let RefreshToken="refresh_token"
+    public static let AccessToken="access_token"
 }
 
 public class OAuthClient{
@@ -89,6 +90,39 @@ public class OAuthClient{
                  callback:@escaping(_ result:HttpResponse<LoginResult>)->Void){
         refresh(url:baseUrl+defaultLoginUrl,
                 refreshToken:refreshToken,callback:callback)
+    }
+    
+    public func revokeXwwwform(url:String,accessToken:String,
+                        callback:@escaping(_ result:Bool)->Void){
+        
+        let params=[OAuthParameterNames.ClientId:self.clientId,
+                    OAuthParameterNames.AccessToken:accessToken]
+        
+        let client = HttpApiClient()
+        
+        client.skipInterception=skipInterception
+        
+        client.post.url(url).xwwwFormData(params).request(){(response:HttpResponse<LoginResult>) in
+            
+                callback(HttpClient.isReponseOK(code: response.ResponseCode))
+            
+        }
+    }
+    
+    public func revoke(url:String,accessToken:String,
+                       callback:@escaping(_ result:Bool)->Void){
+        
+        let data = RevokeData(accessToken: accessToken, clientId: self.clientId)
+        
+        let client = HttpApiClient()
+        
+        client.skipInterception=skipInterception
+        
+        client.post.url(url).jsonData(data).request(){(response:HttpResponse<LoginResult>) in
+            
+            callback(HttpClient.isReponseOK(code: response.ResponseCode))
+            
+        }
     }
     
 }

@@ -57,4 +57,23 @@ class OAuthClientTests:XCTestCase{
         wait(for: [expectations], timeout: 5)
     }
     
+    func testShouldRevokeTokenSuccessfully(){
+        
+        let expectations = XCTestExpectation(description: "OAUTH - TEST")
+        
+        let client = OAuthClient(baseUrl: "",
+                                 clientId: "TestClient" ,
+                                 clientSecret:"secret")
+        
+        client.revoke(url: "https://apifest-live.herokuapp.com/oauth20/tokens/revoke",
+                      accessToken: "mani") { (result:Bool) in
+            
+            XCTAssert(result)
+            
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 5)
+    }
+    
 }
