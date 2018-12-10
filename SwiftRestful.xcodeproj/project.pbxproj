@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F1063DAC21BEBB17003855D9 /* RevokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1063DAB21BEBB17003855D9 /* RevokeData.swift */; };
-		F1063DAF21BEC153003855D9 /* AutoLoginCrudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1063DAD21BEC122003855D9 /* AutoLoginCrudClient.swift */; };
 		F138AE7B21B388E600C79E62 /* SwiftRestful.h in Headers */ = {isa = PBXBuildFile; fileRef = F138AE6D21B388E600C79E62 /* SwiftRestful.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F138AE8621B38BC800C79E62 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = F138AE8521B38BC800C79E62 /* Cartfile */; };
 		F138AE8921B38E3800C79E62 /* NamingConventions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F138AE8821B38E3800C79E62 /* NamingConventions.framework */; };
@@ -42,7 +41,6 @@
 		F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */; };
 		F1838C9921B8F3BC00B579E6 /* JsonConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */; };
 		F1838C9B21B8F3FD00B579E6 /* DataToJsonConversionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */; };
-		F183A63421BC62D5006CCCCF /* OAuthLoginInterceptopr.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63321BC62D5006CCCCF /* OAuthLoginInterceptopr.swift */; };
 		F183A63621BC674F006CCCCF /* CredentialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63521BC674F006CCCCF /* CredentialProvider.swift */; };
 		F183A63821BC67A6006CCCCF /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63721BC67A6006CCCCF /* Credentials.swift */; };
 		F1BB207021B86EE400E99D60 /* HttpResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */; };
@@ -66,7 +64,6 @@
 
 /* Begin PBXFileReference section */
 		F1063DAB21BEBB17003855D9 /* RevokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeData.swift; sourceTree = "<group>"; };
-		F1063DAD21BEC122003855D9 /* AutoLoginCrudClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginCrudClient.swift; sourceTree = "<group>"; };
 		F138AE6A21B388E600C79E62 /* SwiftRestful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRestful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F138AE6D21B388E600C79E62 /* SwiftRestful.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRestful.h; sourceTree = "<group>"; };
 		F138AE6E21B388E600C79E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +100,6 @@
 		F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderCollection.swift; sourceTree = "<group>"; };
 		F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonConvert.swift; sourceTree = "<group>"; };
 		F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToJsonConversionResult.swift; sourceTree = "<group>"; };
-		F183A63321BC62D5006CCCCF /* OAuthLoginInterceptopr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthLoginInterceptopr.swift; sourceTree = "<group>"; };
 		F183A63521BC674F006CCCCF /* CredentialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialProvider.swift; sourceTree = "<group>"; };
 		F183A63721BC67A6006CCCCF /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseStatus.swift; sourceTree = "<group>"; };
@@ -177,7 +173,6 @@
 				F17B09E721B7A92500522B36 /* HttpApiClientTest.swift */,
 				F1D331A821BBBC9E003C2D05 /* CrudClientTests.swift */,
 				F17FF97521BD1DC4008DF950 /* OAuthClientTests.swift */,
-				F1063DAD21BEC122003855D9 /* AutoLoginCrudClient.swift */,
 			);
 			path = SwiftRestfulTests;
 			sourceTree = "<group>";
@@ -287,7 +282,6 @@
 			children = (
 				F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */,
 				F1D331B021BC4061003C2D05 /* ListHttpInterceptor.swift */,
-				F183A63321BC62D5006CCCCF /* OAuthLoginInterceptopr.swift */,
 				F183A63521BC674F006CCCCF /* CredentialProvider.swift */,
 			);
 			name = Interception;
@@ -433,7 +427,6 @@
 				F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */,
 				F138AEC121B3A16D00C79E62 /* LoginResult.swift in Sources */,
 				F1838C9321B8E35800B579E6 /* HttpResponse.swift in Sources */,
-				F183A63421BC62D5006CCCCF /* OAuthLoginInterceptopr.swift in Sources */,
 				F15623F021B6E80D004B9469 /* Todo.swift in Sources */,
 				F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */,
 				F1838C9921B8F3BC00B579E6 /* JsonConvert.swift in Sources */,
@@ -464,7 +457,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17FF97721BD1DE6008DF950 /* OAuthClientTests.swift in Sources */,
-				F1063DAF21BEC153003855D9 /* AutoLoginCrudClient.swift in Sources */,
 				F1D331A921BBBC9E003C2D05 /* CrudClientTests.swift in Sources */,
 				F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */,
 				F138AE9921B39ACE00C79E62 /* JsonConversionTests.swift in Sources */,
