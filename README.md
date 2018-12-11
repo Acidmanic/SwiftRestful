@@ -47,6 +47,203 @@ Since RESTful resources are usually protected and accessing them, needs authoriz
 Example Codes:
 ==========
 
+Download an Html page using **HttpClient**:
+
+```swift
+
+    let client = HttpClient()
+
+    client.download(url: "http://www.google.com", method:HttpMethod.GET,
+        headers:[:],contentData:nil){ (result:HttpResponse<Data>) in
+
+        let sResult = String(data:result.Value,encoding:result.ResponseCharsetEncoding)
+        
+        print(sResult)
+    }
+```
+using **HttpApiClient**:
+
+```swift
+
+    let client = HttpApiClient()
+
+    client.get.url("http://www.google.com").request(){(result:HttpResponse<String>) in
+    
+        print(result.Value)
+    }
+
+```
+
+Getting and **object** using **HttpApiClient**:
+
+```swift
+
+    let client = HttpApiClient()
+
+    client.get.url("http://jsonplaceholder.typicode.com/todos/12")
+        .request(){(result:HttpResponse<Todo>) in
+        
+            // take any action needed with received object
+            let todoObject = result.Value
+            
+}
+```
+the **Todo** class mentioned in this example, is a simple class with four fields: title, body and userId and id. you can find its definition in SwiftRestfulTests/TestModels/Todo.swift.
+
+Post Object, Receive Object  using **HttpApiClient**:
+
+```swift
+
+    let client = HttpApiClient()
+
+    let todo = Todo(title: "NewTodo", body: "TestObject", userId: 123)
+    
+    client.post.url("http://jsonplaceholder.typicode.com/todos")
+    .jsonData(todo).request(){(result:HttpResponse<Todo>) in
+
+        // take any action needed with received object
+        let todoObject = result.Value
+    }
+```
+Post data using xwwwForm:
+
+```swift
+    let client = HttpApiClient()
+
+    client.post.url("http://jsonplaceholder.typicode.com/todos")
+    .xwwwFormData(["title":"NewTodo","body":"dodo","userId":"123"])
+    .request(){(result:HttpResponse<Todo>) in
+    
+        // take any action needed with received object
+        let todoObject = result.Value
+    }
+```
+you can also use **HttpApiClient**.*put*, **HttpApiClient**.*delete* and **HttpApiClient**.*patch* for update, delete and partially update tasks.
+
+Getting and object with Id=12 from the server, using Crud client:
+
+```swift
+    let client = CrudClient(endpoint: "http://jsonplaceholder.typicode.com/todos")
+
+    client.read(params: ["id":"12"]) { (result:Todo!) in
+        // if successful, result is the object
+        // if not, then result will be nil
+    }
+```
+
+a crud create example:
+
+```swift
+    let client = CrudClient(endpoint: "http://jsonplaceholder.typicode.com/todos")
+
+    let createdTodo = Todo(title: "NetworkTest", body: "PerformNetworkTest", userId: 123)
+
+    client.create(object: createdTodo){(result:Todo) in
+        // if successful, the result will be created objec
+        // usually with its id set. and in case of unsuccessful
+        // call, result will be nil.
+    
+    }
+
+```
+
+and a crud delete example:
+
+this will try to delete a user which has the id = 12, from the http://reqres/api/users
+
+```swift
+    let client = CrudClient(endpoint: "http://reqres.in/api/users")
+
+    client.delete(params: ["id":"12"]){(succeed:Bool) in
+        // 🤔 pretty clear, right?
+    }
+
+```
+
+Defining your Data Object Transfers
+===========================
+
+For your DTOs to be used easily in http client classes of this library, these classes should confirm to the Jsonable protocol.
+which means they are responsible to fill their fields from a given json data. this given json data, is infact the dictionary that
+is produced from swift's halfway deserialization. let see an example:
+
+```swift
+class User:Jsonable{
+
+    var name:String!
+    var email:String!
+
+
+    required init(){}
+    
+    func load(jsonData: JsonMediumType!) {
+    
+        self.name = jsonData["name"] as? String
+        
+        self.email = jsonData["email"] as? String
+    }
+}
+```
+
+this User class, can be now used to be sent to, or to be received from the server using **HttpApiClient** or **CrudClient**.  But
+when the number of fields and their type variaty increases, it will become a lot harder to convert these values to what is needed for each field. in the other hand, we might want to support more than one NamingConventions for received jsons to cover a situation where backend is not uniform about naming conventions and etc. to make this conversion easier and also support multipile naming conventions, you can drive your DTO class from  **NamingRitchJsonable** base class. this way you will have access to conversion methods for fields (*getString(), getInt(),getDouble(),...*). also you can select which naming conventions you want to accept. conversion methods will use these conventions to parse the field name and pick correct pice of data from jsonData.
+
+example:
+
+```swift
+class User:NamingRitchJsonableBase,Jsonable{
+
+    var name:String!
+    var email:String!
+    var id:Int!
+
+
+    required override init(){
+        self.acceptingNamingConventions =
+            [NamingConventions.CamelCase,NamingConventions.PascallCase]
+    }
+
+    func load(jsonData: JsonMediumType!) {
+
+        self.name = getString(jsonData,"name")
+
+        self.email = getString(jsonData,"email")
+        
+        self.id = getInt(jsonData,"id")
+    }
+}
+```
+
+this way, both jsons strings: ```{"name":"mani","email":"acidmanic.moayedi@gmail.com","id":12}``` and ```{"Name":"mani","Email":"acidmanic.moayedi@gmail.com","Id":12}``` will be parsed to the same object with valid values.
+
+Jsonabe, supports nested Jsonabe classes. you can Jsonable fields in each Jsonable object and the conversions will work properly. for example consider our user have a Todo object field. then it would look like:
+
+
+```swift
+class User:NamingRitchJsonable,Jsonable{
+
+    var name:String!
+    var email:String!
+    var id:Int!
+    var todo:Todo!
+
+    required override init(){
+        self.acceptingNamingConventions =
+            [NamingConventions.CamelCase,NamingConventions.PascallCase]
+    }
+
+    func load(jsonData: JsonMediumType!) {
+
+        self.name = getString(jsonData,"name")
+
+        self.email = getString(jsonData,"email")
+
+        self.id = getInt(jsonData,"id")
+        
+        self.todo = getJsonable(jsonData,"todo")
+    }
+}
+```
 
 
 Issues Bugs

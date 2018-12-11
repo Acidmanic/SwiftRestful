@@ -11,7 +11,7 @@ import NamingConventions
 
 public class NamingRitchJsonableBase{
     
-    internal let acceptingNamingConventions = [NamingConventions.CamelCase,NamingConventions.PascallCase]
+    internal var acceptingNamingConventions = [NamingConventions.CamelCase,NamingConventions.PascallCase]
     
     internal func getJsonValue(_ jsonData:JsonMediumType,_ key:String)->Any!{
     return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)
@@ -72,5 +72,14 @@ public class NamingRitchJsonableBase{
 //    }
     internal func getBool(_ jsonData:JsonMediumType,_ key:String)->Bool!{
     return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)as?Bool
+    }
+    
+    internal func getJsonable<T:Jsonable>(_ jsonData:JsonMediumType,_ key:String)->T!{
+        if let data = jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions){
+            let ret = T()
+            ret.load(jsonData: data as! JsonMediumType)
+            return ret
+        }
+        return nil
     }
 }

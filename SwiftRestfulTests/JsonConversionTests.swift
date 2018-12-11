@@ -37,12 +37,43 @@ class JsonConversionTests: XCTestCase {
         }
     }
     
+    
+    class NestedModelRitch:NamingRitchJsonableBase,Jsonable{
+        var format:String!="Version2"
+        var simple:SimpleModel!=SimpleModel()
+        
+        required override init() {        }
+        
+        func load(jsonData: JsonMediumType!) {
+            
+            self.format = getString(jsonData,"format")
+            
+            self.simple = getJsonable(jsonData,"simple")
+            
+        }
+    }
+    
     func testJsonConversion(){
         let mainObject = NestedModel()
         mainObject.format="newFormatAstIn"
         mainObject.simple.name="SadeNabash"
         let medium = mainObject.getJsonData()
         let clone = NestedModel()
+        clone.load(jsonData: medium)
+        XCTAssertEqual(mainObject.format, clone.format)
+        XCTAssertEqual(mainObject.simple.name, clone.simple.name)
+        let jsonData = try?
+            JSONSerialization.data(withJSONObject: medium, options:[])
+        let jsonString = String(data:jsonData!,encoding:String.Encoding.utf8)
+        print(jsonString!)
+    }
+    
+    func testNamingRitchBasedClassShouldBeConvertedCorrectly(){
+        let mainObject = NestedModel()
+        mainObject.format="newFormatAstIn"
+        mainObject.simple.name="SadeNabash"
+        let medium = mainObject.getJsonData()
+        let clone = NestedModelRitch()
         clone.load(jsonData: medium)
         XCTAssertEqual(mainObject.format, clone.format)
         XCTAssertEqual(mainObject.simple.name, clone.simple.name)

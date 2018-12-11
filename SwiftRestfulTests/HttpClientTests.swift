@@ -11,6 +11,24 @@ import XCTest
 
 class HttpClientTests: XCTestCase {
     
+    func testShouldGetGooglePage(){
+        
+        let client = HttpClient()
+        
+        let expectations = XCTestExpectation(description: "Http client - 200")
+        
+        client.download(url: "http://www.google.com", method:HttpMethod.GET,
+                        headers:[:],contentData:nil)
+        { (result:HttpResponse<Data>) in
+            XCTAssertEqual(result.ResponseCode, 200)
+            XCTAssertNotNil(result.Value)
+            let sResult = String(data:result.Value,encoding:result.ResponseCharsetEncoding)
+            XCTAssertNotNil(sResult)
+            expectations.fulfill()
+        }
+        
+        wait(for: [expectations], timeout: 5)
+    }
   
     
     
