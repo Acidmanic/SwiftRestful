@@ -43,6 +43,11 @@ OAuth
 -------
 Since RESTful resources are usually protected and accessing them, needs authorization, you will need to add authorization headers into your requests, which is easy using an interceptor. but first you would need to login to your authorization server and receive a token. for that, you would use **OAuthClient** class. This class provides *login()*, *refresh()* and *revoke()* methods.
 
+Intereception
+---------------
+
+Using interceptors, it's possible to change request params before sending a request. The most common example can be adding authorization token to request headers. for that, you can create a class which implements the **HttpRequestInterceptor** protocol. then in *onRequest()* method, you can make any changes you need on the requestParam object. currently rejecting of a request is not supported in http request interception.
+
 
 Example Codes:
 ==========
@@ -291,6 +296,54 @@ revoking a token:
         // succeeded = result
     }
 ```
+
+Authorization interception
+-----------------------------
+
+to add authorization token to all requests from a specific client, first you should create an Interceptor class. for example:
+
+```swift
+
+public class AuthorizationInterceptor:HttpRequestInterceptor{
+
+    var accessToken:String!
+
+    public func onRequest(requestParams:HttpRequestParameters)->HttpRequestParameters{
+    
+        if self.accessToken != nil {
+            requestParams.headers[HttpHeaderCollection.Authorization]
+                = HttpHeaderCollection.AuthorizationBearerPrefix + self.accessToken
+        }
+        
+        return requestParams
+    }
+}
+```
+this can be a shared object, or a singleton or etc. you can push such object in your clients interceptors. an interceptor can be added to a client or globally to all instances of the client class.
+
+```swift
+    let interceptor = AuthorizationInterceptor()
+    
+    interceptor.accessToken = "mani"
+    // add interceptor to current client only
+    client.pushInstanceInterceptor(interceptor:interceptor)
+```
+```swift
+    let interceptor = AuthorizationInterceptor()
+
+    interceptor.accessToken = "mani"
+    
+    // add interceptor to any request that is beeing made by a CrudClient object
+    CrudClient.pushGlobalInterceptor(interceptor:interceptor)
+    
+    // add interceptor to any request that is beeing made with all ApiClients and therefore all CrudClients *
+    HttpApiClient.pushGlobalInterceptor(interceptor:interceptor)
+    
+    // add interceptor to any request that is beeing made with this library *
+    HttpClient.pushGlobalInterceptor(interceptor:interceptor)
+```
+
+* CrudClient objects, use HttpApiClients internally. and HttpApiClients internally use HttpClients. so if set an interceptor globally in lower level, all higher levels will be affected consequently.
 
 
 Issues Bugs
