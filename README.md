@@ -161,7 +161,7 @@ this will try to delete a user which has the id = 12, from the http://reqres/api
 ```
 
 Defining your Data Object Transfers
-===========================
+-----------------------------------------
 
 For your DTOs to be used easily in http client classes of this library, these classes should confirm to the Jsonable protocol.
 which means they are responsible to fill their fields from a given json data. this given json data, is infact the dictionary that
@@ -243,6 +243,53 @@ class User:NamingRitchJsonable,Jsonable{
         self.todo = getJsonable(jsonData,"todo")
     }
 }
+```
+
+OAuth
+-------
+
+Currently **OAuthClient** class can perform login with *password* grant_type. it can login by username and password, refresh a previously received token and revoke a token.
+
+```swift
+
+    let client = OAuthClient(baseUrl: "", clientId: "TestClient" , clientSecret:"secret")
+
+    client.login(url: "https://apifest-live.herokuapp.com/oauth20/tokens"
+        , username: "mani", password: "mani") { (result:HttpResponse<LoginResult>) in
+
+        if HttpClient.isReponseOK(code: result.ResponseCode){
+            // provided access_token :
+            let access_token = result.Value.access_token
+        }
+    }
+
+```
+refreshing a token:
+
+```swift
+    let client = OAuthClient(baseUrl: "", clientId: "TestClient" , clientSecret:"secret")
+
+    client.refresh(url: "https://apifest-live.herokuapp.com/oauth20/tokens"
+        , refreshToken: "mani") { (result:HttpResponse<LoginResult>) in
+        
+        if HttpClient.isReponseOK(code: result.ResponseCode){
+            // provided access_token :
+            let access_token = result.Value.access_token
+        }
+    }
+```
+
+
+revoking a token:
+
+```swift
+
+    let client = OAuthClient(clientId: "TestClient" , clientSecret:"secret")
+
+    client.revoke(url: "https://apifest-live.herokuapp.com/oauth20/tokens/revoke",
+        accessToken: "mani") { (result:Bool) in
+        // succeeded = result
+    }
 ```
 
 
