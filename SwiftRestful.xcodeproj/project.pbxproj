@@ -43,6 +43,7 @@
 		F1838C9B21B8F3FD00B579E6 /* DataToJsonConversionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */; };
 		F183A63621BC674F006CCCCF /* CredentialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63521BC674F006CCCCF /* CredentialProvider.swift */; };
 		F183A63821BC67A6006CCCCF /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63721BC67A6006CCCCF /* Credentials.swift */; };
+		F1AAE01C21BFFF93003B1565 /* SwiftRestful.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F1AAE01B21BFFF93003B1565 /* SwiftRestful.podspec */; };
 		F1BB207021B86EE400E99D60 /* HttpResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */; };
 		F1D331A521BB76D6003C2D05 /* CrudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A421BB76D6003C2D05 /* CrudClient.swift */; };
 		F1D331A721BBB7B1003C2D05 /* JsonableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A621BBB7B1003C2D05 /* JsonableVoid.swift */; };
@@ -102,6 +103,7 @@
 		F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataToJsonConversionResult.swift; sourceTree = "<group>"; };
 		F183A63521BC674F006CCCCF /* CredentialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialProvider.swift; sourceTree = "<group>"; };
 		F183A63721BC67A6006CCCCF /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		F1AAE01B21BFFF93003B1565 /* SwiftRestful.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftRestful.podspec; sourceTree = "<group>"; };
 		F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseStatus.swift; sourceTree = "<group>"; };
 		F1D331A421BB76D6003C2D05 /* CrudClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudClient.swift; sourceTree = "<group>"; };
 		F1D331A621BBB7B1003C2D05 /* JsonableVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonableVoid.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		F138AE8421B38B8000C79E62 /* PackageManagement */ = {
 			isa = PBXGroup;
 			children = (
+				F1AAE01B21BFFF93003B1565 /* SwiftRestful.podspec */,
 				F138AE8521B38BC800C79E62 /* Cartfile */,
 			);
 			name = PackageManagement;
@@ -381,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AAE01C21BFFF93003B1565 /* SwiftRestful.podspec in Resources */,
 				F138AE8621B38BC800C79E62 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +608,7 @@
 				);
 				INFOPLIST_FILE = SwiftRestful/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
 				PRODUCT_NAME = SwiftRestful;
@@ -628,6 +633,7 @@
 				);
 				INFOPLIST_FILE = SwiftRestful/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
 				PRODUCT_NAME = SwiftRestful;

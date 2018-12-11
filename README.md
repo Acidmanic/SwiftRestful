@@ -348,7 +348,3 @@ this can be a shared object, or a singleton or etc. you can push such object in 
 
 Issues Bugs
 =======
-
-
-
-
