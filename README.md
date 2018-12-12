@@ -3,11 +3,21 @@
 Swift Restful 
 ========
 
+[![CI Status](https://img.shields.io/travis/rust-lang/rust.svg?style=flat)](https://travis-ci.org/Acidmanic/SwiftRestful)
+[![Version](https://img.shields.io/cocoapods/v/SwiftRestful.svg?style=flat)](https://cocoapods.org/pods/SwiftRestful)
+[![GitHub license](https://img.shields.io/github/license/Acidmanic/SwiftRestful.svg)](https://github.com/Acidmanic/SwiftRestful/blob/master/LICENSE)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftRestful.svg?style=flat)](https://cocoapods.org/pods/SwiftRestful)
+
+<img src="https://raw.githubusercontent.com/Carthage/Carthage/master/Logo/PNG/colored.png" width="32px" height="32px" />  <img src="https://raw.githubusercontent.com/CocoaPods/shared_resources/master/img/CocoaPods-Logo-Highlight.png" width="128px" height="32px" />
+
+
+About
+=====
 
 Swift Restful project provides some useful http access classes and tools, which hopefuly would make api calls easier. it also introduces a way to complete object serialization from/to json strings mostly behind the scene. the goal is for user to be able to call apis with their DTOs and receive DTOs in response automatically.
 
 Features
-=====
+----------
 
 *	**Asynchronouse http calls**
 *	**Interception in application scope and object scope**
@@ -20,11 +30,30 @@ How to get the library
 =============
 
 
+*    Cocoapods
+
+SwiftRestful is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'SwiftRestful'
+```
+
+*    Carthage
+
+To get the latest version of library using Carthage, you can add following line to your Cartfile.
+
+```bash
+github "Acidmanic/SwiftRestful"
+```
+
+
+
 
 How to use
 =======
 
-Custome | Low level access | not so easy
+Flexible | Low level access
 --------------------------------------------
 
 For calling an HTTP endpoint for **raw data** you  will use the simplest class: **HttpClient**. HttpClient wraps the swift internal Http access classes. It gives one *download()* method. which can add to http-request parameters and write any data using any http-method (GET/POST/PUT/...). It's more flexible but not the easiest way to call http end points and is mostly useful for make special calls that are not covered in HttpApiClient class.
@@ -37,7 +66,7 @@ For calling HTTP endpoints **sending String body, url-parameters, WWWForms param
 RESTful CRUD endpoints
 ---------------------------
 
-If you have a **fully RESTful** resource on an api endpoint, you can use **CrudClient** class. this one works mainly based on conventions. it uses HTTP methods to reach for objects in server, adding, deleting and updating them. Using **CrudClient** you will not deal with http protocol, and you will just use create,read,update and delete methods.
+If you have a **Fully RESTful** resource on an api endpoint, you can use **CrudClient** class. this one works mainly based on conventions. it uses HTTP methods to reach for objects in server, adding, deleting and updating them. Using **CrudClient** you will not deal with http protocol, and you will just use create,read,update and delete methods.
 
 OAuth
 -------
@@ -346,5 +375,15 @@ this can be a shared object, or a singleton or etc. you can push such object in 
 * CrudClient objects, use HttpApiClients internally. and HttpApiClients internally use HttpClients. so if set an interceptor globally in lower level, all higher levels will be affected consequently.
 
 
-Issues Bugs
-=======
+
+
+
+
+
+Thanks & Good luck 👍
+[Mani](https://about.me/moayedi)
+
+
+
+
+
