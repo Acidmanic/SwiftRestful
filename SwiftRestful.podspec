@@ -19,6 +19,6 @@ s.watchos.deployment_target = "3.2"
 s.tvos.deployment_target = '10.2'
 
 s.source_files = 'SwiftRestful/**/*'
-s.dependency = 'NamingConventions'
+s.dependency 'NamingConventions'
 
 end

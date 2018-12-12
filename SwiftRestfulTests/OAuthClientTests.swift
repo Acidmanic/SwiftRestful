@@ -31,7 +31,7 @@ class OAuthClientTests:XCTestCase{
             expectations.fulfill()
         }
         
-        wait(for: [expectations], timeout: 5)
+        wait(for: [expectations], timeout: 15)
     }
     
     
@@ -54,7 +54,7 @@ class OAuthClientTests:XCTestCase{
             expectations.fulfill()
         }
         
-        wait(for: [expectations], timeout: 5)
+        wait(for: [expectations], timeout: 15)
     }
     
     func testShouldRevokeTokenSuccessfully(){
@@ -73,7 +73,7 @@ class OAuthClientTests:XCTestCase{
             expectations.fulfill()
         }
         
-        wait(for: [expectations], timeout: 5)
+        wait(for: [expectations], timeout: 15)
     }
     
 }
