@@ -1,0 +1,24 @@
+
+
+
+osx_image: xcode9.1
+language: objective-c
+
+before_install:
+- gem install cocoapods # Since Travis is not always on latest version
+- export COCOAPODS_TRUNK_TOKEN=$COCOAPODS_TOKEN
+
+script: ./tests.sh
+
+deploy:
+  provider: releases
+  skip-cleanup: true
+  api_key: $GITHUB_TOKEN 
+  keep-history: true
+  on:
+    branch: master
+    tags: true
+  file_glob: true
+  file: /Users/travis/Library/Developer/Xcode/DerivedData/SwiftRestful-*/Build/Products/Release-iphoneos/SwiftRestful/SwiftRestful.framework
+after_deploy: "pod trunk push --allow-warnings"
+  
