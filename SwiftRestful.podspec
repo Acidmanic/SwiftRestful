@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SwiftRestful'
-s.version          = '0.0.1'
+s.version          = '0.0.2'
 s.summary          = 'This library provides a framework for interact with Restful or other http endpoints.'
 s.swift_version    = '4.0'
 
@@ -22,4 +22,3 @@ s.source_files = 'SwiftRestful/**/*'
 s.dependency = 'NamingConventions'
 
 end
-

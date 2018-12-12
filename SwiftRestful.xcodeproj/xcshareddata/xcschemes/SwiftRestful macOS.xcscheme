@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F1AAE0D621C0E306003B1565"
-               BuildableName = "SwiftRestful_macOS.framework"
+               BuildableName = "SwiftRestful.framework"
                BlueprintName = "SwiftRestful macOS"
                ReferencedContainer = "container:SwiftRestful.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1AAE0D621C0E306003B1565"
-            BuildableName = "SwiftRestful_macOS.framework"
+            BuildableName = "SwiftRestful.framework"
             BlueprintName = "SwiftRestful macOS"
             ReferencedContainer = "container:SwiftRestful.xcodeproj">
          </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1AAE0D621C0E306003B1565"
-            BuildableName = "SwiftRestful_macOS.framework"
+            BuildableName = "SwiftRestful.framework"
             BlueprintName = "SwiftRestful macOS"
             ReferencedContainer = "container:SwiftRestful.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1AAE0D621C0E306003B1565"
-            BuildableName = "SwiftRestful_macOS.framework"
+            BuildableName = "SwiftRestful.framework"
             BlueprintName = "SwiftRestful macOS"
             ReferencedContainer = "container:SwiftRestful.xcodeproj">
          </BuildableReference>

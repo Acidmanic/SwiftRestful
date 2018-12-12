@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F1AAE05121C0D77F003B1565"
                BuildableName = "SwiftRestful.framework"
-               BlueprintName = "SwiftRestful"
+               BlueprintName = "SwiftRestful watchOS"
                ReferencedContainer = "container:SwiftRestful.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -49,7 +49,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1AAE05121C0D77F003B1565"
             BuildableName = "SwiftRestful.framework"
-            BlueprintName = "SwiftRestful"
+            BlueprintName = "SwiftRestful watchOS"
             ReferencedContainer = "container:SwiftRestful.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1AAE05121C0D77F003B1565"
             BuildableName = "SwiftRestful.framework"
-            BlueprintName = "SwiftRestful"
+            BlueprintName = "SwiftRestful watchOS"
             ReferencedContainer = "container:SwiftRestful.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
