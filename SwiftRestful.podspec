@@ -13,7 +13,7 @@ s.author           = { 'Acidmanic' => 'acidmanic.moayedi@gmail.com' }
 s.source           = { :git => 'https://github.com/Acidmanic/SwiftRestful.git', :tag => s.version }
 s.social_media_url = 'https://about.me/moayedi'
 
-s.ios.deployment_target = '11.1'
+s.ios.deployment_target = '9.3'
 s.osx.deployment_target = '10.12'
 s.watchos.deployment_target = "3.2"
 s.tvos.deployment_target = '10.2'
