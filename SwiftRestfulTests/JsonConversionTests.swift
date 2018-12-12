@@ -55,8 +55,8 @@ class JsonConversionTests: XCTestCase {
     
     func testJsonConversion(){
         let mainObject = NestedModel()
-        mainObject.format="newFormatAstIn"
-        mainObject.simple.name="SadeNabash"
+        mainObject.format="newFormatForNothing"
+        mainObject.simple.name="aSimpleName"
         let medium = mainObject.getJsonData()
         let clone = NestedModel()
         clone.load(jsonData: medium)
@@ -70,8 +70,8 @@ class JsonConversionTests: XCTestCase {
     
     func testNamingRitchBasedClassShouldBeConvertedCorrectly(){
         let mainObject = NestedModel()
-        mainObject.format="newFormatAstIn"
-        mainObject.simple.name="SadeNabash"
+        mainObject.format="newFormatForNothing"
+        mainObject.simple.name="aSimpleName"
         let medium = mainObject.getJsonData()
         let clone = NestedModelRitch()
         clone.load(jsonData: medium)

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SwiftRestful
+
 class HttpbinTodo:HttpBinAnything{
     
     var form:Todo!

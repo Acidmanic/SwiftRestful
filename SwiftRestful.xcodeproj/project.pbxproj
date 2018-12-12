@@ -21,7 +21,6 @@
 		F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */; };
 		F138AECD21B3A17800C79E62 /* OAuthClinet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC821B3A17800C79E62 /* OAuthClinet.swift */; };
 		F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */; };
-		F15623F021B6E80D004B9469 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623EF21B6E80D004B9469 /* Todo.swift */; };
 		F15623F321B6EA4A004B9469 /* NamingRitchJsonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623F221B6EA4A004B9469 /* NamingRitchJsonable.swift */; };
 		F17B09D521B78D0000522B36 /* HttpApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D421B78D0000522B36 /* HttpApiClient.swift */; };
 		F17B09D821B78E4F00522B36 /* RequestBuilderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D721B78E4F00522B36 /* RequestBuilderBase.swift */; };
@@ -33,8 +32,6 @@
 		F17B09E421B79E3D00522B36 /* DELETERequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E321B79E3D00522B36 /* DELETERequestBuilder.swift */; };
 		F17B09E621B79E5000522B36 /* PATCHRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E521B79E5000522B36 /* PATCHRequestBuilder.swift */; };
 		F17B09E921B7A96D00522B36 /* HttpApiClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E721B7A92500522B36 /* HttpApiClientTest.swift */; };
-		F17B09EB21B7CEFF00522B36 /* HttpBinAnything.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EA21B7CEFF00522B36 /* HttpBinAnything.swift */; };
-		F17B09ED21B7E39800522B36 /* HttpbinTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EC21B7E39800522B36 /* HttpbinTodo.swift */; };
 		F17FF97721BD1DE6008DF950 /* OAuthClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FF97521BD1DC4008DF950 /* OAuthClientTests.swift */; };
 		F1838C9321B8E35800B579E6 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9221B8E35800B579E6 /* HttpResponse.swift */; };
 		F1838C9521B8E37C00B579E6 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9421B8E37C00B579E6 /* HttpMethod.swift */; };
@@ -44,11 +41,86 @@
 		F183A63621BC674F006CCCCF /* CredentialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63521BC674F006CCCCF /* CredentialProvider.swift */; };
 		F183A63821BC67A6006CCCCF /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63721BC67A6006CCCCF /* Credentials.swift */; };
 		F1AAE01C21BFFF93003B1565 /* SwiftRestful.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F1AAE01B21BFFF93003B1565 /* SwiftRestful.podspec */; };
+		F1AAE06821C0DAFB003B1565 /* SwiftRestful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AAE05F21C0DAFA003B1565 /* SwiftRestful.framework */; };
+		F1AAE07621C0DB9D003B1565 /* HttpRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */; };
+		F1AAE07721C0DB9D003B1565 /* ListHttpInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331B021BC4061003C2D05 /* ListHttpInterceptor.swift */; };
+		F1AAE07821C0DB9D003B1565 /* CredentialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63521BC674F006CCCCF /* CredentialProvider.swift */; };
+		F1AAE07921C0DB9D003B1565 /* ParameterConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D921B793A700522B36 /* ParameterConversion.swift */; };
+		F1AAE07A21C0DB9D003B1565 /* CallbackConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09DB21B79AE700522B36 /* CallbackConversion.swift */; };
+		F1AAE07B21C0DB9D003B1565 /* HttpRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */; };
+		F1AAE07C21C0DB9D003B1565 /* HttpResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */; };
+		F1AAE07D21C0DB9D003B1565 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9221B8E35800B579E6 /* HttpResponse.swift */; };
+		F1AAE07E21C0DB9D003B1565 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9421B8E37C00B579E6 /* HttpMethod.swift */; };
+		F1AAE07F21C0DB9D003B1565 /* HttpHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */; };
+		F1AAE08021C0DB9D003B1565 /* HttpResponseCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331AD21BC1B38003C2D05 /* HttpResponseCodes.swift */; };
+		F1AAE08121C0DB9D003B1565 /* RequestBuilderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D721B78E4F00522B36 /* RequestBuilderBase.swift */; };
+		F1AAE08221C0DB9D003B1565 /* GETRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09DD21B79DAA00522B36 /* GETRequestBuilder.swift */; };
+		F1AAE08321C0DB9D003B1565 /* POSTRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09DF21B79DFC00522B36 /* POSTRequestBuilder.swift */; };
+		F1AAE08421C0DB9D003B1565 /* PUTRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E121B79E3200522B36 /* PUTRequestBuilder.swift */; };
+		F1AAE08521C0DB9D003B1565 /* DELETERequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E321B79E3D00522B36 /* DELETERequestBuilder.swift */; };
+		F1AAE08621C0DB9D003B1565 /* PATCHRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E521B79E5000522B36 /* PATCHRequestBuilder.swift */; };
+		F1AAE08721C0DB9D003B1565 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC521B3A17800C79E62 /* HttpClient.swift */; };
+		F1AAE08821C0DB9D003B1565 /* OAuthClinet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC821B3A17800C79E62 /* OAuthClinet.swift */; };
+		F1AAE08921C0DB9D003B1565 /* HttpApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D421B78D0000522B36 /* HttpApiClient.swift */; };
+		F1AAE08A21C0DB9D003B1565 /* CrudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A421BB76D6003C2D05 /* CrudClient.swift */; };
+		F1AAE08B21C0DB9D003B1565 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEBF21B3A16D00C79E62 /* LoginResult.swift */; };
+		F1AAE08C21C0DB9D003B1565 /* Timespan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC021B3A16D00C79E62 /* Timespan.swift */; };
+		F1AAE08D21C0DB9D003B1565 /* JsonableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A621BBB7B1003C2D05 /* JsonableVoid.swift */; };
+		F1AAE08E21C0DB9D003B1565 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63721BC67A6006CCCCF /* Credentials.swift */; };
+		F1AAE08F21C0DB9D003B1565 /* RevokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1063DAB21BEBB17003855D9 /* RevokeData.swift */; };
+		F1AAE09021C0DB9D003B1565 /* Jsonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE8E21B3915D00C79E62 /* Jsonable.swift */; };
+		F1AAE09121C0DB9D003B1565 /* NamingRitchJsonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623F221B6EA4A004B9469 /* NamingRitchJsonable.swift */; };
+		F1AAE09221C0DB9D003B1565 /* JsonConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */; };
+		F1AAE09321C0DB9D003B1565 /* DataToJsonConversionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */; };
+		F1AAE09521C0DBD7003B1565 /* NamingConventions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AAE09421C0DBD7003B1565 /* NamingConventions.framework */; };
+		F1AAE09721C0DC64003B1565 /* HttpRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC621B3A17800C79E62 /* HttpRequestInterceptor.swift */; };
+		F1AAE09821C0DC64003B1565 /* ListHttpInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331B021BC4061003C2D05 /* ListHttpInterceptor.swift */; };
+		F1AAE09921C0DC64003B1565 /* CredentialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63521BC674F006CCCCF /* CredentialProvider.swift */; };
+		F1AAE09A21C0DC64003B1565 /* ParameterConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D921B793A700522B36 /* ParameterConversion.swift */; };
+		F1AAE09B21C0DC64003B1565 /* CallbackConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09DB21B79AE700522B36 /* CallbackConversion.swift */; };
+		F1AAE09C21C0DC64003B1565 /* HttpRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC721B3A17800C79E62 /* HttpRequestParameters.swift */; };
+		F1AAE09D21C0DC64003B1565 /* HttpResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */; };
+		F1AAE09E21C0DC64003B1565 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9221B8E35800B579E6 /* HttpResponse.swift */; };
+		F1AAE09F21C0DC64003B1565 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9421B8E37C00B579E6 /* HttpMethod.swift */; };
+		F1AAE0A021C0DC64003B1565 /* HttpHeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9621B8E3A000B579E6 /* HttpHeaderCollection.swift */; };
+		F1AAE0A121C0DC64003B1565 /* HttpResponseCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331AD21BC1B38003C2D05 /* HttpResponseCodes.swift */; };
+		F1AAE0A221C0DC64003B1565 /* RequestBuilderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D721B78E4F00522B36 /* RequestBuilderBase.swift */; };
+		F1AAE0A321C0DC64003B1565 /* GETRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09DD21B79DAA00522B36 /* GETRequestBuilder.swift */; };
+		F1AAE0A421C0DC64003B1565 /* POSTRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09DF21B79DFC00522B36 /* POSTRequestBuilder.swift */; };
+		F1AAE0A521C0DC64003B1565 /* PUTRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E121B79E3200522B36 /* PUTRequestBuilder.swift */; };
+		F1AAE0A621C0DC64003B1565 /* DELETERequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E321B79E3D00522B36 /* DELETERequestBuilder.swift */; };
+		F1AAE0A721C0DC64003B1565 /* PATCHRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E521B79E5000522B36 /* PATCHRequestBuilder.swift */; };
+		F1AAE0A821C0DC64003B1565 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC521B3A17800C79E62 /* HttpClient.swift */; };
+		F1AAE0A921C0DC64003B1565 /* OAuthClinet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC821B3A17800C79E62 /* OAuthClinet.swift */; };
+		F1AAE0AA21C0DC64003B1565 /* HttpApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09D421B78D0000522B36 /* HttpApiClient.swift */; };
+		F1AAE0AB21C0DC64003B1565 /* CrudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A421BB76D6003C2D05 /* CrudClient.swift */; };
+		F1AAE0AC21C0DC64003B1565 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEBF21B3A16D00C79E62 /* LoginResult.swift */; };
+		F1AAE0AD21C0DC64003B1565 /* Timespan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AEC021B3A16D00C79E62 /* Timespan.swift */; };
+		F1AAE0AE21C0DC64003B1565 /* JsonableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A621BBB7B1003C2D05 /* JsonableVoid.swift */; };
+		F1AAE0AF21C0DC64003B1565 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F183A63721BC67A6006CCCCF /* Credentials.swift */; };
+		F1AAE0B021C0DC64003B1565 /* RevokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1063DAB21BEBB17003855D9 /* RevokeData.swift */; };
+		F1AAE0B121C0DC64003B1565 /* Jsonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE8E21B3915D00C79E62 /* Jsonable.swift */; };
+		F1AAE0B221C0DC64003B1565 /* NamingRitchJsonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623F221B6EA4A004B9469 /* NamingRitchJsonable.swift */; };
+		F1AAE0B321C0DC64003B1565 /* JsonConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9821B8F3BC00B579E6 /* JsonConvert.swift */; };
+		F1AAE0B421C0DC64003B1565 /* DataToJsonConversionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838C9A21B8F3FD00B579E6 /* DataToJsonConversionResult.swift */; };
+		F1AAE0BF21C0DC97003B1565 /* NamingConventions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AAE0BE21C0DC97003B1565 /* NamingConventions.framework */; };
+		F1AAE0C121C0DCF7003B1565 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623EF21B6E80D004B9469 /* Todo.swift */; };
+		F1AAE0C221C0DCF7003B1565 /* HttpBinAnything.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EA21B7CEFF00522B36 /* HttpBinAnything.swift */; };
+		F1AAE0C321C0DCF7003B1565 /* HttpbinTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EC21B7E39800522B36 /* HttpbinTodo.swift */; };
+		F1AAE0C421C0DCF7003B1565 /* ReqresUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331AA21BBD208003C2D05 /* ReqresUser.swift */; };
+		F1AAE0C521C0DCF7003B1565 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AECE21B3A24B00C79E62 /* HttpClientTests.swift */; };
+		F1AAE0C621C0DCF7003B1565 /* JsonConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138AE9721B3946200C79E62 /* JsonConversionTests.swift */; };
+		F1AAE0C721C0DCF7003B1565 /* HttpApiClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09E721B7A92500522B36 /* HttpApiClientTest.swift */; };
+		F1AAE0C821C0DCF7003B1565 /* CrudClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A821BBBC9E003C2D05 /* CrudClientTests.swift */; };
+		F1AAE0C921C0DCF7003B1565 /* OAuthClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17FF97521BD1DC4008DF950 /* OAuthClientTests.swift */; };
+		F1AAE0CE21C0DDEC003B1565 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15623EF21B6E80D004B9469 /* Todo.swift */; };
+		F1AAE0CF21C0DF03003B1565 /* HttpBinAnything.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EA21B7CEFF00522B36 /* HttpBinAnything.swift */; };
+		F1AAE0D021C0DF0A003B1565 /* HttpbinTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B09EC21B7E39800522B36 /* HttpbinTodo.swift */; };
+		F1AAE0D121C0DF26003B1565 /* ReqresUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331AA21BBD208003C2D05 /* ReqresUser.swift */; };
 		F1BB207021B86EE400E99D60 /* HttpResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */; };
 		F1D331A521BB76D6003C2D05 /* CrudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A421BB76D6003C2D05 /* CrudClient.swift */; };
 		F1D331A721BBB7B1003C2D05 /* JsonableVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A621BBB7B1003C2D05 /* JsonableVoid.swift */; };
 		F1D331A921BBBC9E003C2D05 /* CrudClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331A821BBBC9E003C2D05 /* CrudClientTests.swift */; };
-		F1D331AC21BC177D003C2D05 /* ReqresUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331AA21BBD208003C2D05 /* ReqresUser.swift */; };
 		F1D331AE21BC1B38003C2D05 /* HttpResponseCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331AD21BC1B38003C2D05 /* HttpResponseCodes.swift */; };
 		F1D331B221BC417F003C2D05 /* ListHttpInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D331B021BC4061003C2D05 /* ListHttpInterceptor.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +131,13 @@
 			containerPortal = F138AE6121B388E600C79E62 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F138AE6921B388E600C79E62;
+			remoteInfo = SwiftRestful;
+		};
+		F1AAE06921C0DAFB003B1565 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F138AE6121B388E600C79E62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1AAE05E21C0DAFA003B1565;
 			remoteInfo = SwiftRestful;
 		};
 /* End PBXContainerItemProxy section */
@@ -104,6 +183,11 @@
 		F183A63521BC674F006CCCCF /* CredentialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialProvider.swift; sourceTree = "<group>"; };
 		F183A63721BC67A6006CCCCF /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		F1AAE01B21BFFF93003B1565 /* SwiftRestful.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftRestful.podspec; sourceTree = "<group>"; };
+		F1AAE05221C0D77F003B1565 /* SwiftRestful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRestful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1AAE05F21C0DAFA003B1565 /* SwiftRestful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRestful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1AAE06721C0DAFB003B1565 /* SwiftRestfulTests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftRestfulTests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1AAE09421C0DBD7003B1565 /* NamingConventions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NamingConventions.framework; path = Carthage/Build/watchOS/NamingConventions.framework; sourceTree = "<group>"; };
+		F1AAE0BE21C0DC97003B1565 /* NamingConventions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NamingConventions.framework; path = Carthage/Build/tvOS/NamingConventions.framework; sourceTree = "<group>"; };
 		F1BB206F21B86EE400E99D60 /* HttpResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseStatus.swift; sourceTree = "<group>"; };
 		F1D331A421BB76D6003C2D05 /* CrudClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudClient.swift; sourceTree = "<group>"; };
 		F1D331A621BBB7B1003C2D05 /* JsonableVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonableVoid.swift; sourceTree = "<group>"; };
@@ -130,6 +214,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1AAE04E21C0D77F003B1565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1AAE09521C0DBD7003B1565 /* NamingConventions.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1AAE05B21C0DAFA003B1565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1AAE0BF21C0DC97003B1565 /* NamingConventions.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1AAE06421C0DAFB003B1565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1AAE06821C0DAFB003B1565 /* SwiftRestful.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -149,6 +257,9 @@
 			children = (
 				F138AE6A21B388E600C79E62 /* SwiftRestful.framework */,
 				F138AE7321B388E600C79E62 /* SwiftRestfulTests iOS.xctest */,
+				F1AAE05221C0D77F003B1565 /* SwiftRestful.framework */,
+				F1AAE05F21C0DAFA003B1565 /* SwiftRestful.framework */,
+				F1AAE06721C0DAFB003B1565 /* SwiftRestfulTests tvOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +302,8 @@
 		F138AE8721B38E3800C79E62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1AAE0BE21C0DC97003B1565 /* NamingConventions.framework */,
+				F1AAE09421C0DBD7003B1565 /* NamingConventions.framework */,
 				F138AE8821B38E3800C79E62 /* NamingConventions.framework */,
 			);
 			name = Frameworks;
@@ -301,6 +414,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1AAE04F21C0D77F003B1565 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1AAE05C21C0DAFA003B1565 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -341,6 +468,62 @@
 			productReference = F138AE7321B388E600C79E62 /* SwiftRestfulTests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F1AAE05121C0D77F003B1565 /* SwiftRestful watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1AAE05721C0D77F003B1565 /* Build configuration list for PBXNativeTarget "SwiftRestful watchOS" */;
+			buildPhases = (
+				F1AAE04D21C0D77F003B1565 /* Sources */,
+				F1AAE04E21C0D77F003B1565 /* Frameworks */,
+				F1AAE04F21C0D77F003B1565 /* Headers */,
+				F1AAE05021C0D77F003B1565 /* Resources */,
+				F1AAE09621C0DBE1003B1565 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftRestful watchOS";
+			productName = SwiftRestful;
+			productReference = F1AAE05221C0D77F003B1565 /* SwiftRestful.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F1AAE05E21C0DAFA003B1565 /* SwiftRestful tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1AAE07021C0DAFB003B1565 /* Build configuration list for PBXNativeTarget "SwiftRestful tvOS" */;
+			buildPhases = (
+				F1AAE05A21C0DAFA003B1565 /* Sources */,
+				F1AAE05B21C0DAFA003B1565 /* Frameworks */,
+				F1AAE05C21C0DAFA003B1565 /* Headers */,
+				F1AAE05D21C0DAFA003B1565 /* Resources */,
+				F1AAE0C021C0DCA0003B1565 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftRestful tvOS";
+			productName = SwiftRestful;
+			productReference = F1AAE05F21C0DAFA003B1565 /* SwiftRestful.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F1AAE06621C0DAFB003B1565 /* SwiftRestfulTests tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1AAE07321C0DAFB003B1565 /* Build configuration list for PBXNativeTarget "SwiftRestfulTests tvOS" */;
+			buildPhases = (
+				F1AAE06321C0DAFB003B1565 /* Sources */,
+				F1AAE06421C0DAFB003B1565 /* Frameworks */,
+				F1AAE06521C0DAFB003B1565 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1AAE06A21C0DAFB003B1565 /* PBXTargetDependency */,
+			);
+			name = "SwiftRestfulTests tvOS";
+			productName = SwiftRestfulTests;
+			productReference = F1AAE06721C0DAFB003B1565 /* SwiftRestfulTests tvOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -356,6 +539,18 @@
 						ProvisioningStyle = Automatic;
 					};
 					F138AE7221B388E600C79E62 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					F1AAE05121C0D77F003B1565 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					F1AAE05E21C0DAFA003B1565 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					F1AAE06621C0DAFB003B1565 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -375,6 +570,9 @@
 			targets = (
 				F138AE6921B388E600C79E62 /* SwiftRestful iOS */,
 				F138AE7221B388E600C79E62 /* SwiftRestfulTests iOS */,
+				F1AAE05121C0D77F003B1565 /* SwiftRestful watchOS */,
+				F1AAE05E21C0DAFA003B1565 /* SwiftRestful tvOS */,
+				F1AAE06621C0DAFB003B1565 /* SwiftRestfulTests tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -390,6 +588,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F138AE7121B388E600C79E62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1AAE05021C0D77F003B1565 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1AAE05D21C0DAFA003B1565 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1AAE06521C0DAFB003B1565 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -413,6 +632,34 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		F1AAE09621C0DBE1003B1565 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/NamingConventions.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		F1AAE0C021C0DCA0003B1565 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/NamingConventions.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -424,14 +671,12 @@
 				F138AECA21B3A17800C79E62 /* HttpClient.swift in Sources */,
 				F17B09E421B79E3D00522B36 /* DELETERequestBuilder.swift in Sources */,
 				F183A63821BC67A6006CCCCF /* Credentials.swift in Sources */,
-				F17B09EB21B7CEFF00522B36 /* HttpBinAnything.swift in Sources */,
 				F1063DAC21BEBB17003855D9 /* RevokeData.swift in Sources */,
 				F17B09DE21B79DAA00522B36 /* GETRequestBuilder.swift in Sources */,
 				F138AEC221B3A16D00C79E62 /* Timespan.swift in Sources */,
 				F138AECC21B3A17800C79E62 /* HttpRequestParameters.swift in Sources */,
 				F138AEC121B3A16D00C79E62 /* LoginResult.swift in Sources */,
 				F1838C9321B8E35800B579E6 /* HttpResponse.swift in Sources */,
-				F15623F021B6E80D004B9469 /* Todo.swift in Sources */,
 				F1838C9721B8E3A000B579E6 /* HttpHeaderCollection.swift in Sources */,
 				F1838C9921B8F3BC00B579E6 /* JsonConvert.swift in Sources */,
 				F1838C9B21B8F3FD00B579E6 /* DataToJsonConversionResult.swift in Sources */,
@@ -441,7 +686,6 @@
 				F138AE9021B3915D00C79E62 /* Jsonable.swift in Sources */,
 				F17B09E021B79DFC00522B36 /* POSTRequestBuilder.swift in Sources */,
 				F17B09E221B79E3200522B36 /* PUTRequestBuilder.swift in Sources */,
-				F17B09ED21B7E39800522B36 /* HttpbinTodo.swift in Sources */,
 				F15623F321B6EA4A004B9469 /* NamingRitchJsonable.swift in Sources */,
 				F17B09D521B78D0000522B36 /* HttpApiClient.swift in Sources */,
 				F1838C9521B8E37C00B579E6 /* HttpMethod.swift in Sources */,
@@ -451,7 +695,6 @@
 				F17B09DC21B79AE700522B36 /* CallbackConversion.swift in Sources */,
 				F1D331A721BBB7B1003C2D05 /* JsonableVoid.swift in Sources */,
 				F1BB207021B86EE400E99D60 /* HttpResponseStatus.swift in Sources */,
-				F1D331AC21BC177D003C2D05 /* ReqresUser.swift in Sources */,
 				F138AECB21B3A17800C79E62 /* HttpRequestInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,12 +703,106 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AAE0CE21C0DDEC003B1565 /* Todo.swift in Sources */,
 				F17FF97721BD1DE6008DF950 /* OAuthClientTests.swift in Sources */,
 				F1D331A921BBBC9E003C2D05 /* CrudClientTests.swift in Sources */,
+				F1AAE0CF21C0DF03003B1565 /* HttpBinAnything.swift in Sources */,
+				F1AAE0D121C0DF26003B1565 /* ReqresUser.swift in Sources */,
 				F138AED021B3A27100C79E62 /* HttpClientTests.swift in Sources */,
+				F1AAE0D021C0DF0A003B1565 /* HttpbinTodo.swift in Sources */,
 				F138AE9921B39ACE00C79E62 /* JsonConversionTests.swift in Sources */,
 				F1D331AE21BC1B38003C2D05 /* HttpResponseCodes.swift in Sources */,
 				F17B09E921B7A96D00522B36 /* HttpApiClientTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1AAE04D21C0D77F003B1565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1AAE07621C0DB9D003B1565 /* HttpRequestInterceptor.swift in Sources */,
+				F1AAE07721C0DB9D003B1565 /* ListHttpInterceptor.swift in Sources */,
+				F1AAE07821C0DB9D003B1565 /* CredentialProvider.swift in Sources */,
+				F1AAE07921C0DB9D003B1565 /* ParameterConversion.swift in Sources */,
+				F1AAE07A21C0DB9D003B1565 /* CallbackConversion.swift in Sources */,
+				F1AAE07B21C0DB9D003B1565 /* HttpRequestParameters.swift in Sources */,
+				F1AAE07C21C0DB9D003B1565 /* HttpResponseStatus.swift in Sources */,
+				F1AAE07D21C0DB9D003B1565 /* HttpResponse.swift in Sources */,
+				F1AAE07E21C0DB9D003B1565 /* HttpMethod.swift in Sources */,
+				F1AAE07F21C0DB9D003B1565 /* HttpHeaderCollection.swift in Sources */,
+				F1AAE08021C0DB9D003B1565 /* HttpResponseCodes.swift in Sources */,
+				F1AAE08121C0DB9D003B1565 /* RequestBuilderBase.swift in Sources */,
+				F1AAE08221C0DB9D003B1565 /* GETRequestBuilder.swift in Sources */,
+				F1AAE08321C0DB9D003B1565 /* POSTRequestBuilder.swift in Sources */,
+				F1AAE08421C0DB9D003B1565 /* PUTRequestBuilder.swift in Sources */,
+				F1AAE08521C0DB9D003B1565 /* DELETERequestBuilder.swift in Sources */,
+				F1AAE08621C0DB9D003B1565 /* PATCHRequestBuilder.swift in Sources */,
+				F1AAE08721C0DB9D003B1565 /* HttpClient.swift in Sources */,
+				F1AAE08821C0DB9D003B1565 /* OAuthClinet.swift in Sources */,
+				F1AAE08921C0DB9D003B1565 /* HttpApiClient.swift in Sources */,
+				F1AAE08A21C0DB9D003B1565 /* CrudClient.swift in Sources */,
+				F1AAE08B21C0DB9D003B1565 /* LoginResult.swift in Sources */,
+				F1AAE08C21C0DB9D003B1565 /* Timespan.swift in Sources */,
+				F1AAE08D21C0DB9D003B1565 /* JsonableVoid.swift in Sources */,
+				F1AAE08E21C0DB9D003B1565 /* Credentials.swift in Sources */,
+				F1AAE08F21C0DB9D003B1565 /* RevokeData.swift in Sources */,
+				F1AAE09021C0DB9D003B1565 /* Jsonable.swift in Sources */,
+				F1AAE09121C0DB9D003B1565 /* NamingRitchJsonable.swift in Sources */,
+				F1AAE09221C0DB9D003B1565 /* JsonConvert.swift in Sources */,
+				F1AAE09321C0DB9D003B1565 /* DataToJsonConversionResult.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1AAE05A21C0DAFA003B1565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1AAE09721C0DC64003B1565 /* HttpRequestInterceptor.swift in Sources */,
+				F1AAE09821C0DC64003B1565 /* ListHttpInterceptor.swift in Sources */,
+				F1AAE09921C0DC64003B1565 /* CredentialProvider.swift in Sources */,
+				F1AAE09A21C0DC64003B1565 /* ParameterConversion.swift in Sources */,
+				F1AAE09B21C0DC64003B1565 /* CallbackConversion.swift in Sources */,
+				F1AAE09C21C0DC64003B1565 /* HttpRequestParameters.swift in Sources */,
+				F1AAE09D21C0DC64003B1565 /* HttpResponseStatus.swift in Sources */,
+				F1AAE09E21C0DC64003B1565 /* HttpResponse.swift in Sources */,
+				F1AAE09F21C0DC64003B1565 /* HttpMethod.swift in Sources */,
+				F1AAE0A021C0DC64003B1565 /* HttpHeaderCollection.swift in Sources */,
+				F1AAE0A121C0DC64003B1565 /* HttpResponseCodes.swift in Sources */,
+				F1AAE0A221C0DC64003B1565 /* RequestBuilderBase.swift in Sources */,
+				F1AAE0A321C0DC64003B1565 /* GETRequestBuilder.swift in Sources */,
+				F1AAE0A421C0DC64003B1565 /* POSTRequestBuilder.swift in Sources */,
+				F1AAE0A521C0DC64003B1565 /* PUTRequestBuilder.swift in Sources */,
+				F1AAE0A621C0DC64003B1565 /* DELETERequestBuilder.swift in Sources */,
+				F1AAE0A721C0DC64003B1565 /* PATCHRequestBuilder.swift in Sources */,
+				F1AAE0A821C0DC64003B1565 /* HttpClient.swift in Sources */,
+				F1AAE0A921C0DC64003B1565 /* OAuthClinet.swift in Sources */,
+				F1AAE0AA21C0DC64003B1565 /* HttpApiClient.swift in Sources */,
+				F1AAE0AB21C0DC64003B1565 /* CrudClient.swift in Sources */,
+				F1AAE0AC21C0DC64003B1565 /* LoginResult.swift in Sources */,
+				F1AAE0AD21C0DC64003B1565 /* Timespan.swift in Sources */,
+				F1AAE0AE21C0DC64003B1565 /* JsonableVoid.swift in Sources */,
+				F1AAE0AF21C0DC64003B1565 /* Credentials.swift in Sources */,
+				F1AAE0B021C0DC64003B1565 /* RevokeData.swift in Sources */,
+				F1AAE0B121C0DC64003B1565 /* Jsonable.swift in Sources */,
+				F1AAE0B221C0DC64003B1565 /* NamingRitchJsonable.swift in Sources */,
+				F1AAE0B321C0DC64003B1565 /* JsonConvert.swift in Sources */,
+				F1AAE0B421C0DC64003B1565 /* DataToJsonConversionResult.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1AAE06321C0DAFB003B1565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1AAE0C121C0DCF7003B1565 /* Todo.swift in Sources */,
+				F1AAE0C221C0DCF7003B1565 /* HttpBinAnything.swift in Sources */,
+				F1AAE0C321C0DCF7003B1565 /* HttpbinTodo.swift in Sources */,
+				F1AAE0C421C0DCF7003B1565 /* ReqresUser.swift in Sources */,
+				F1AAE0C521C0DCF7003B1565 /* HttpClientTests.swift in Sources */,
+				F1AAE0C621C0DCF7003B1565 /* JsonConversionTests.swift in Sources */,
+				F1AAE0C721C0DCF7003B1565 /* HttpApiClientTest.swift in Sources */,
+				F1AAE0C821C0DCF7003B1565 /* CrudClientTests.swift in Sources */,
+				F1AAE0C921C0DCF7003B1565 /* OAuthClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +813,11 @@
 			isa = PBXTargetDependency;
 			target = F138AE6921B388E600C79E62 /* SwiftRestful iOS */;
 			targetProxy = F138AE7521B388E600C79E62 /* PBXContainerItemProxy */;
+		};
+		F1AAE06A21C0DAFB003B1565 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1AAE05E21C0DAFA003B1565 /* SwiftRestful tvOS */;
+			targetProxy = F1AAE06921C0DAFB003B1565 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -529,7 +871,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -583,7 +925,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -608,7 +950,7 @@
 				);
 				INFOPLIST_FILE = SwiftRestful/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
 				PRODUCT_NAME = SwiftRestful;
@@ -633,7 +975,7 @@
 				);
 				INFOPLIST_FILE = SwiftRestful/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
 				PRODUCT_NAME = SwiftRestful;
@@ -671,6 +1013,144 @@
 			};
 			name = Release;
 		};
+		F1AAE05821C0D77F003B1565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = SwiftRestful/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
+				PRODUCT_NAME = SwiftRestful;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		F1AAE05921C0D77F003B1565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = SwiftRestful/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
+				PRODUCT_NAME = SwiftRestful;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		F1AAE07121C0DAFB003B1565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = SwiftRestful/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
+				PRODUCT_NAME = SwiftRestful;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.1;
+			};
+			name = Debug;
+		};
+		F1AAE07221C0DAFB003B1565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = SwiftRestful/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestful;
+				PRODUCT_NAME = SwiftRestful;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.1;
+			};
+			name = Release;
+		};
+		F1AAE07421C0DAFB003B1565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SwiftRestfulTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestfulTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.1;
+			};
+			name = Debug;
+		};
+		F1AAE07521C0DAFB003B1565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SwiftRestfulTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Acidmanic.SwiftRestfulTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -697,6 +1177,33 @@
 			buildConfigurations = (
 				F138AE8221B388E600C79E62 /* Debug */,
 				F138AE8321B388E600C79E62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1AAE05721C0D77F003B1565 /* Build configuration list for PBXNativeTarget "SwiftRestful watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1AAE05821C0D77F003B1565 /* Debug */,
+				F1AAE05921C0D77F003B1565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1AAE07021C0DAFB003B1565 /* Build configuration list for PBXNativeTarget "SwiftRestful tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1AAE07121C0DAFB003B1565 /* Debug */,
+				F1AAE07221C0DAFB003B1565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1AAE07321C0DAFB003B1565 /* Build configuration list for PBXNativeTarget "SwiftRestfulTests tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1AAE07421C0DAFB003B1565 /* Debug */,
+				F1AAE07521C0DAFB003B1565 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

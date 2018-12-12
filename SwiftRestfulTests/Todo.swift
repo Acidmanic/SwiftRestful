@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftRestful
 
 class Todo:NamingRitchJsonableBase, Jsonable{
     

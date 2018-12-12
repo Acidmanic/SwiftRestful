@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Timespan{
-    var hours:Int=0
-    var minutes:Int=0
-    var seconds:Int=0
+public class Timespan{
+    public var hours:Int=0
+    public var minutes:Int=0
+    public var seconds:Int=0
     
-    init(timeString:String!) {
+    public init(timeString:String!) {
         if timeString != nil{
             let parts=timeString.split(separator: ":")
             if parts.count==3{
@@ -38,10 +38,10 @@ class Timespan{
         self.seconds=seconds
     }
     
-    init(hours:Int,minutes:Int,seconds:Int){
+    public init(hours:Int,minutes:Int,seconds:Int){
         self.load(hours: hours, minutes: minutes, seconds: seconds)
     }
-    required init() {    }
+    required public init() {    }
     
     private func fixLength(value:Int)->String{
         var ret = "\(value)"
@@ -51,10 +51,10 @@ class Timespan{
         return ret
     }
     
-    func toString()->String{
+    public func toString()->String{
         return "\(fixLength(value: self.hours)):\(fixLength(value: self.minutes)):\(fixLength(value: self.seconds))"
     }
-    func toUIString()->String{
+    public func toUIString()->String{
         return "\(fixLength(value: self.hours)):\(fixLength(value: self.minutes))"
     }
 }

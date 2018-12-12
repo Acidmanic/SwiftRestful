@@ -9,15 +9,17 @@
 import Foundation
 import NamingConventions
 
-public class NamingRitchJsonableBase{
+open class NamingRitchJsonableBase{
     
-    internal var acceptingNamingConventions = [NamingConventions.CamelCase,NamingConventions.PascallCase]
+    public init(){}
     
-    internal func getJsonValue(_ jsonData:JsonMediumType,_ key:String)->Any!{
-    return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)
+    public var acceptingNamingConventions = [NamingConventions.CamelCase,NamingConventions.PascallCase]
+    
+    public func getJsonValue(_ jsonData:JsonMediumType,_ key:String)->Any!{
+        return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)
     }
     
-    internal func getInt64(_ jsonData:JsonMediumType,_ key:String)->Int64!{
+    public func getInt64(_ jsonData:JsonMediumType,_ key:String)->Int64!{
         if let data = jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions) {
             if let idata = data as? Int64 {
                 return idata
@@ -29,7 +31,7 @@ public class NamingRitchJsonableBase{
         return nil
     }
     
-    internal func getInt(_ jsonData:JsonMediumType,_ key:String)->Int!{
+    public func getInt(_ jsonData:JsonMediumType,_ key:String)->Int!{
         if let data = jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions) {
             if let idata = data as? Int {
                 return idata
@@ -43,10 +45,11 @@ public class NamingRitchJsonableBase{
         return nil
     }
     
-    internal func getString(_ jsonData:JsonMediumType,_ key:String)->String!{
-    return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)as?String
+    public func getString(_ jsonData:JsonMediumType,_ key:String)->String!{
+        return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)as?String
     }
-    internal func getDouble(_ jsonData:JsonMediumType,_ key:String)->Double!{
+    
+    public func getDouble(_ jsonData:JsonMediumType,_ key:String)->Double!{
         
         if let data = jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions){
             if let dData = data as? Double {
@@ -58,23 +61,18 @@ public class NamingRitchJsonableBase{
         }
         return nil
     }
-    internal func getTimespan(_ jsonData:JsonMediumType,_ key:String)->Timespan!{
-    if let sTimespan = getString(jsonData, key){
-    return Timespan(timeString:sTimespan)
+    public func getTimespan(_ jsonData:JsonMediumType,_ key:String)->Timespan!{
+        if let sTimespan = getString(jsonData, key){
+            return Timespan(timeString:sTimespan)
+        }
+        return nil
     }
-    return nil
-    }
-//    internal func getDate(_ jsonData:JsonMediumType,_ key:String)->Date!{
-//    if let sDate = getString(jsonData, key){
-//    return Date.fromApiStringDate(dateString: sDate)
-//    }
-//    return nil
-//    }
-    internal func getBool(_ jsonData:JsonMediumType,_ key:String)->Bool!{
-    return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)as?Bool
+
+    public func getBool(_ jsonData:JsonMediumType,_ key:String)->Bool!{
+        return jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions)as?Bool
     }
     
-    internal func getJsonable<T:Jsonable>(_ jsonData:JsonMediumType,_ key:String)->T!{
+    public func getJsonable<T:Jsonable>(_ jsonData:JsonMediumType,_ key:String)->T!{
         if let data = jsonData.getValueByAnyOfCases(key: key, namingCases: self.acceptingNamingConventions){
             let ret = T()
             ret.load(jsonData: data as! JsonMediumType)

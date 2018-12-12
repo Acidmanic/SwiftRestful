@@ -2,11 +2,11 @@
 //  SwiftRestful.h
 //  SwiftRestful
 //
-//  Created by Mani Moayedi on 12/2/18.
+//  Created by Mani Moayedi on 12/12/18.
 //  Copyright © 2018 Mani Moayedi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for SwiftRestful.
 FOUNDATION_EXPORT double SwiftRestfulVersionNumber;
