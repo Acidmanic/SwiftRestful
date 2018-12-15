@@ -3,7 +3,7 @@
 Swift Restful 
 ========
 
-[![CI Status](https://img.shields.io/travis/rust-lang/rust.svg?style=flat)](https://travis-ci.org/Acidmanic/SwiftRestful)
+[![CI Status](https://travis-ci.org/Acidmanic/SwiftRestful.svg?branch=master)](https://travis-ci.org/Acidmanic/SwiftRestful)
 [![Version](https://img.shields.io/cocoapods/v/SwiftRestful.svg?style=flat)](https://cocoapods.org/pods/SwiftRestful)
 [![GitHub license](https://img.shields.io/github/license/Acidmanic/SwiftRestful.svg)](https://github.com/Acidmanic/SwiftRestful/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftRestful.svg?style=flat)](https://cocoapods.org/pods/SwiftRestful)
